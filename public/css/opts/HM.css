@@ -1,0 +1,89 @@
+/*COLORS
+
+blue: #17a2b8;
+gold: #E7C45D;
+
+text: #6E7E85;
+background: #f8f6f0;
+background: #f2e6ce;
+
+black: #1C0F13;
+
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700');
+
+body{
+  font-size: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #6E7E85;
+  font-weight: 300;
+  background: url('../../../assets/HM/HM-china.png') repeat;
+  /*background-blend-mode: multiply;*/
+  background-color: #f2e6ce;
+}
+
+button{
+	background-color: #17a2b8;
+	color:#FFF;
+	transition: 0.5s;
+}
+
+button:hover{
+	background-color: #E7C45D!important;
+}
+
+.logo {
+	left:1%;
+  	max-height: 100px;
+  	min-height: 42px;
+  	width: 225px;
+}
+
+.slide{
+	box-shadow: 0 0 25px rgba(0,0,0,.25);
+}
+
+.header{
+    background-color: #17a2b8;
+    color: rgba(255,255,255,.75);
+    font-weight: 300;
+}
+
+.question{
+	color: #1C0F13;
+}
+
+#btn-div-left{
+  border-left: 1px solid #FFF;
+}
+
+#btn-div-right{
+  border-right: 1px solid #FFF;
+}
+
+.slider-output, #slideVal{
+  color: #1C0F13;
+}
+
+/*============== SLIDER ===============*/
+
+.quiz-slider {
+    background: linear-gradient(#CAA538,#FFE18B);
+}
+
+.quiz-slider::-webkit-slider-thumb {
+    background: url("../../../assets/HM/helen-glyph_sm.png") no-repeat center center;
+    background-color:#ebda86;
+}
+
+.quiz-slider::-moz-range-thumb {
+    background: url("../../../assets/HM/helen-glyph_sm.png") no-repeat center center;
+    background-color:#ebda86;
+}
+
+
+
+
+
+
