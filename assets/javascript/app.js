@@ -69,8 +69,15 @@ $(document).ready(function () {
         quizContainer.innerHTML = output.join("");
     }
 
-    function showResults() {
+    function showLeadGen() {
         quizContainer.classList.add("d-none");
+        document.getElementsByClassName('lead-gen')[0].classList.remove('d-none');
+        var submit = document.getElementById('submit-lead');
+        submit.addEventListener("click", showResults);
+    }
+
+    function showResults() {
+        document.getElementsByClassName('lead-gen')[0].classList.add("d-none");
         document.getElementsByClassName('results-container')[0].classList.remove('d-none');
         // document.getElementById("results")
         // show number of correct answers out of total
@@ -153,7 +160,7 @@ $(document).ready(function () {
         if (currentSlide === slides.length - 1) {
             nextBtns[n].classList.add('d-none');
             submits[n].classList.remove('d-none');
-            submits[n].addEventListener("click", showResults);
+            submits[n].addEventListener("click", showLeadGen);
         } else {
             nextBtns[n].classList.remove('d-none');
             submits[n].classList.add('d-none');

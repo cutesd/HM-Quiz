@@ -68,6 +68,59 @@
 		</div>
 		<!-- ./quiz-container -->
 
+		<div class="lead-gen d-none">
+
+			<h1 class="header">Which of the 8 Invisible Chains have you Trapped?</h1>
+
+			<div class="top">
+
+				<h3 class="question">Where should we send your results?</h3>
+
+				<form accept-charset="UTF-8" action="https://zg121.infusionsoft.com/app/form/process/b3987557376c5ce61a4c27cb597aedd4" class="infusion-form"
+				 id="inf_form_b3987557376c5ce61a4c27cb597aedd4" method="POST">
+					<input name="inf_form_xid" type="hidden" value="b3987557376c5ce61a4c27cb597aedd4" />
+					<input name="inf_form_name" type="hidden" value="Quiz LeadGen" />
+					<input name="infusionsoft_version" type="hidden" value="1.70.0.52507" />
+
+					<div class="form-group infusion-field">
+						<label for="inf_field_FirstName">First Name</label>
+						<input type="text" class="form-control infusion-field-input" id="inf_field_FirstName" name="inf_field_FirstName" aria-describedby="nameHelp"
+						 placeholder="">
+					</div>
+
+					<div class="form-group infusion-field">
+						<label for="inf_field_Email">Email Address</label>
+						<input type="email" class="form-control infusion-field-input" id="inf_field_Email" name="inf_field_Email" aria-describedby="emailHelp"
+						 placeholder="">
+						<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					</div>
+
+					<div class="form-group infusion-field form-check">
+						<span class="infusion-option">
+							<input class="form-check-input" checked="checked" id="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan" name="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan"
+							 type="checkbox" value="1751" />
+							<label class="form-check-label" for="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan">I agree to receive periodic emails from Helen MacMillan</label>
+						</span>
+					</div>
+					<div class="infusion-submit">
+						<button type="submit" class="btn btn-primary d-none">Submit</button>
+					</div>
+					
+				</form>
+
+
+
+
+			</div>
+
+			<div class="mt-auto bottom btn-group btn-group-lg" role="group" aria-label="Basic example">
+				<button type="button" class="btn" id="btn-div-right"></button>
+				<button type="button" id="submit-lead" class="btn">Submit</button>
+			</div>
+
+
+		</div>
+
 		<!--======================================= RESULTS =======================================-->
 		<div class="results-container d-none">
 
@@ -330,7 +383,7 @@
 										</a>
 									</div>
 									<div class="card-body">
-										<h5 class="card-title">Disconnection</h5>
+										<h5 class="card-title">Connection</h5>
 										<h6 class="card-subtitle mb-2 text-muted">Your Score: LOW</h6>
 										<p class="card-text" id="low">
 											For you, this is not a friendly world. It’s dangerous, and full of uncaring people and circumstances. But this could open
@@ -364,7 +417,7 @@
 										</a>
 									</div>
 									<div class="card-body">
-										<h5 class="card-title">Subservience</h5>
+										<h5 class="card-title">Value</h5>
 										<h6 class="card-subtitle mb-2 text-muted">Your Score: LOW</h6>
 										<p class="card-text" id="low">
 											You may feel like a lowly person, a servant in life, and unworthy of good things. This is a hard burden to bear. But you
@@ -415,8 +468,11 @@
 	 crossorigin="anonymous"></script>
 
 	<!-- ./bootstrap core -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	 crossorigin="anonymous"></script>
+
+	<!-- INFUSTIONSOFT JAVASCRIPT -->
+	<script type="text/javascript" src="https://zg121.infusionsoft.com/app/webTracking/getTrackingCode"></script>
+	<script type="text/javascript" src="https://zg121.infusionsoft.com/app/timezone/timezoneInputJs?xid=b3987557376c5ce61a4c27cb597aedd4"></script>
+
 	<script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
