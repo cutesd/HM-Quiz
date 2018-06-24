@@ -30,7 +30,6 @@ $(document).ready(function () {
         // for each question...
         myQuestions.forEach((currentQuestion, questionNumber) => {
 
-            console.log("slider" + questionNumber);
             // add this question and its answers to the output
             output.push(
                 `<div class="slide d-none">
@@ -105,12 +104,6 @@ $(document).ready(function () {
             }
         }
 
-        console.log(document.getElementById('slider0').value);
-        console.log(document.getElementById('slider1').value);
-        console.log((document.getElementById('slider0').value + document.getElementById('slider1').value));
-        console.log((document.getElementById('slider0').value + document.getElementById('slider1').value) / 2);
-        console.log(Math.floor((parseInt(document.getElementById('slider0').value) + parseInt(document.getElementById('slider1').value)) / 2));
-
         myResults = {
             "Scarcity": Math.floor((parseInt(document.getElementById('slider0').value) + parseInt(document.getElementById('slider1').value)) / 2),
             "Mistrust": document.getElementById('slider2').value,
@@ -149,7 +142,6 @@ $(document).ready(function () {
         }
         nextBtns[n].addEventListener("click", showNextSlide);
         //
-        console.log(document.getElementById('ph-btn'));
         if (currentSlide === 0) {
             prevBtns[0].textContent = '';
         } else {
@@ -226,12 +218,7 @@ $(document).ready(function () {
         var selLeg;
 
         this.draw = function () {
-            var maxValue = 0;
-            for (var categ in this.options.data) {
-                // maxValue = Math.max(maxValue,this.options.data[categ]);
-                console.log(this.options.data[categ]);
-                maxValue = 10;
-            }
+            var maxValue = 10;
             var canvasActualHeight = this.canvas.height - this.options.padding * 2;
             var canvasActualWidth = this.canvas.width - this.options.padding * 2;
 
@@ -301,7 +288,7 @@ $(document).ready(function () {
                 a.setAttribute("role", "button");
                 a.setAttribute("aria-expanded", "false");
                 a.setAttribute("aria-controls", "result-card" + barIndex);
-                a.textContent = categ + ": " + sliders[barIndex].value;
+                a.textContent = categ + ": " + this.options.data[categ];
                 a.addEventListener("click", legendToggle);
                 li.append(a);
                 ul.append(li);
