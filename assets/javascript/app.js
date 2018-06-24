@@ -204,7 +204,7 @@
         ctx.fillRect(upperLeftCornerX, upperLeftCornerY, width, height);
         ctx.restore();
     }
-
+ 
 
     var Barchart = function (options) {
         this.options = options;
