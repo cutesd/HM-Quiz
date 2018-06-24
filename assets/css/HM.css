@@ -18,7 +18,7 @@ body{
   font-family: 'Josefin Sans', sans-serif;
   color: #6E7E85;
   font-weight: 300;
-  background: url('../../../assets/HM/HM-china.png') repeat;
+  background: url('../images/HM-china.png') repeat;
   /*background-blend-mode: multiply;*/
   background-color: #f2e6ce;
 }
@@ -73,12 +73,12 @@ button:hover{
 }
 
 .quiz-slider::-webkit-slider-thumb {
-    background: url("../../../assets/HM/helen-glyph_sm.png") no-repeat center center;
+    background: url("../images/helen-glyph_sm.png") no-repeat center center;
     background-color:#ebda86;
 }
 
 .quiz-slider::-moz-range-thumb {
-    background: url("../../../assets/HM/helen-glyph_sm.png") no-repeat center center;
+    background: url("../images/helen-glyph_sm.png") no-repeat center center;
     background-color:#ebda86;
 }
 
