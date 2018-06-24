@@ -1,7 +1,4 @@
-(function () {
-
-    console.log('HELLO');
-
+$(document).ready(function () {
 
     const myQuestions = [
         {
@@ -21,6 +18,8 @@
         { question: "I find it easy to accept and embrace all people and situations." },
         { question: "Everyone in my life values me and respects my time." },
         { question: "I am completely committed to do whatever it takes to get free of the chains that bind me." }
+
+
     ];
 
 
@@ -31,6 +30,7 @@
         // for each question...
         myQuestions.forEach((currentQuestion, questionNumber) => {
 
+            console.log("slider" + questionNumber);
             // add this question and its answers to the output
             output.push(
                 `<div class="slide d-none">
@@ -44,7 +44,7 @@
 						
 		  				<div class="slider-container mt-4">
 		  					<div class="flex-shrink-1 text-right slider-num">1</div>
-							<div class="p-2 w-100"><input class="quiz-slider" type="range" min="1" max="10" value="5"></div>
+							<div class="p-2 w-100"><input class="quiz-slider" id="slider`+ questionNumber + `" type="range" min="1" max="10" value="5"></div>
 							<div class="flex-shrink-1 slider-num">10</div>
 						</div>
 
@@ -85,7 +85,7 @@
             meds[i].classList.add('d-none');
             his[i].classList.add('d-none');
             //
-            var n = sliders[i].value;
+            var n = (i == 0) ? Math.floor((parseInt(document.getElementById('slider0').value) + parseInt(document.getElementById('slider1').value)) / 2) : document.getElementById('slider' + (i + 1)).value;
             if (n > 8) {
                 subtitles[i].textContent = "Your Score: HIGH";
                 his[i].classList.remove('d-none');
@@ -98,15 +98,21 @@
             }
         }
 
-        myVinyls = {
-            "Scarcity": sliders[0].value,
-            "Mistrust": sliders[1].value,
-            "Invisibility": sliders[2].value,
-            "Control": sliders[3].value,
-            "Repression": sliders[4].value,
-            "Blindness": sliders[5].value,
-            "Connection": sliders[6].value,
-            "Value": sliders[7].value
+        console.log(document.getElementById('slider0').value);
+        console.log(document.getElementById('slider1').value);
+        console.log((document.getElementById('slider0').value + document.getElementById('slider1').value));
+        console.log((document.getElementById('slider0').value + document.getElementById('slider1').value) / 2);
+        console.log(Math.floor((parseInt(document.getElementById('slider0').value) + parseInt(document.getElementById('slider1').value)) / 2));
+
+        myResults = {
+            "Scarcity": Math.floor((parseInt(document.getElementById('slider0').value) + parseInt(document.getElementById('slider1').value)) / 2),
+            "Mistrust": document.getElementById('slider2').value,
+            "Invisibility": document.getElementById('slider3').value,
+            "Control": document.getElementById('slider4').value,
+            "Repression": document.getElementById('slider5').value,
+            "Blindness": document.getElementById('slider6').value,
+            "Connection": document.getElementById('slider7').value,
+            "Value": document.getElementById('slider8').value
         };
 
         myBarchart = new Barchart(
@@ -116,7 +122,7 @@
                 padding: 28,
                 gridScale: 1,
                 gridColor: "#bbb",
-                data: myVinyls,
+                data: myResults,
                 colors: ["#F9C7A8", "#F39A9B", "#EC6E8D", "#D84A87", "#A9378F", "#7A2397", "#461266", "#310C46"]
             }
         );
@@ -216,6 +222,7 @@
             var maxValue = 0;
             for (var categ in this.options.data) {
                 // maxValue = Math.max(maxValue,this.options.data[categ]);
+                console.log(this.options.data[categ]);
                 maxValue = 10;
             }
             var canvasActualHeight = this.canvas.height - this.options.padding * 2;
@@ -309,10 +316,10 @@
         }
     }
 
-    var myVinyls;
+    var myResults;
     var myBarchart;
 
 
-})();
+});
 
 // end
