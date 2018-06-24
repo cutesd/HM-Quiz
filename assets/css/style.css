@@ -43,6 +43,10 @@ button:hover{
   cursor:pointer;
 }
 
+ul{
+  padding-left:20px;
+}
+
 li{
   list-style: none;
   padding: 5px;
@@ -148,6 +152,10 @@ li{
 }
 
 /* ===========  RESULTS CARD ===================*/
+
+.card {
+  margin-bottom: 1rem;
+}
 
 .card-title{
   color: #666;

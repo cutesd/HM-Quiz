@@ -23,8 +23,6 @@
         { question: "I am completely committed to do whatever it takes to get free of the chains that bind me." }
     ];
 
-    console.log(myQuestions[3].question);
-
 
     function buildQuiz() {
         // we'll need a place to store the HTML output
@@ -82,19 +80,19 @@
         var meds = document.querySelectorAll("#med");
         var his = document.querySelectorAll("#hi");
 
-        for(var i=0; i<lows.length; i++){
+        for (var i = 0; i < lows.length; i++) {
             lows[i].classList.add('d-none');
             meds[i].classList.add('d-none');
             his[i].classList.add('d-none');
             //
             var n = sliders[i].value;
-            if(n>8){
+            if (n > 8) {
                 subtitles[i].textContent = "Your Score: HIGH";
                 his[i].classList.remove('d-none');
-            }else if(n>4){
+            } else if (n > 4) {
                 subtitles[i].textContent = "Your Score: MEDIUM";
                 meds[i].classList.remove('d-none');
-            }else{
+            } else {
                 subtitles[i].textContent = "Your Score: LOW";
                 lows[i].classList.remove('d-none');
             }
@@ -109,7 +107,7 @@
             "Blindness": sliders[5].value,
             "Connection": sliders[6].value,
             "Value": sliders[7].value
-        }; 
+        };
 
         myBarchart = new Barchart(
             {
@@ -204,13 +202,15 @@
         ctx.fillRect(upperLeftCornerX, upperLeftCornerY, width, height);
         ctx.restore();
     }
- 
+
 
     var Barchart = function (options) {
         this.options = options;
         this.canvas = options.canvas;
         this.ctx = this.canvas.getContext("2d");
         this.colors = options.colors;
+
+        var selLeg;
 
         this.draw = function () {
             var maxValue = 0;
@@ -283,22 +283,35 @@
                 li.style.borderLeft = "20px solid " + this.colors[barIndex % this.colors.length];
                 var a = document.createElement("a");
                 a.setAttribute("data-toggle", "collapse");
-                a.setAttribute("href", "#result-card"+barIndex);
+                a.setAttribute("href", "#result-card" + barIndex);
                 a.setAttribute("role", "button");
                 a.setAttribute("aria-expanded", "false");
-                a.setAttribute("aria-controls", "result-card"+barIndex);
-                a.textContent = categ+": "+sliders[barIndex].value;
+                a.setAttribute("aria-controls", "result-card" + barIndex);
+                a.textContent = categ + ": " + sliders[barIndex].value;
+                a.addEventListener("click", legendToggle);
                 li.append(a);
                 ul.append(li);
                 barIndex++;
             }
 
         }
+
+        function legendToggle() {
+            if (selLeg !== undefined) {
+                var card = document.getElementById(selLeg);
+                var targetDiv = card.querySelector("#closeBtn");
+                var clickEvent = document.createEvent("MouseEvents");
+                clickEvent.initMouseEvent("click", true, true, window, 1, 0, 0, 0, 0,
+                    false, false, false, false, 0, null);
+                targetDiv.dispatchEvent(clickEvent);
+            }
+            selLeg = $(this).attr('aria-controls');
+        }
     }
 
     var myVinyls;
     var myBarchart;
-   
+
 
 })();
 
