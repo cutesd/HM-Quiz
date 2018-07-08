@@ -37,7 +37,7 @@ $(document).ready(function () {
 				<h1 class="header">Which of the 8 Invisible Chains have you Trapped?</h1>
 				
 				<div class="top">
-		  				
+		  				<h5 class="text-muted">Question ${questionNumber+1}.</h5>
 		  				<h3 class="question">${currentQuestion.question}</h3>
 		  				<p class="description">Use the slider below to indicate where you feel in relation to this question.</p>
 						
@@ -123,7 +123,14 @@ $(document).ready(function () {
                 gridScale: 1,
                 gridColor: "#bbb",
                 data: myResults,
-                colors: ["#F9C7A8", "#F39A9B", "#EC6E8D", "#D84A87", "#A9378F", "#7A2397", "#461266", "#310C46"]
+                colors: ["#ee3143", "#f47723", "#f4ba1a", "#05af4c", "#279ED8", "#37459D", "#7361ab", "#F88BA7"]
+                /*root - ee3143
+sacral - f47723
+solarplexus - f4ba1a
+heart - 05af4c
+throat - 279ED8
+3rd-eye - 7361ab
+crown - F88BA7 */
             }
         );
 
