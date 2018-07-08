@@ -34,7 +34,10 @@ $(document).ready(function () {
             output.push(
                 `<div class="slide d-none">
 
-				<h1 class="header">Which of the 8 Invisible Chains have you Trapped?</h1>
+				<header class="header">
+					<div class="inline-bg"><img src="assets/images/HMC_logo-inline.png" alt="Helen MacMillan"></div>
+					<h1>Which of the 8 Invisible Chains have you Trapped?</h1>
+				</header>
 				
 				<div class="top">
 		  				<h5 class="text-muted question-num">Question #${questionNumber+1}</h5>

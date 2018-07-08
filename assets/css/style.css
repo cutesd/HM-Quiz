@@ -92,10 +92,11 @@ li{
   background-color: #666;
   color: rgba(255,255,255,.75);
   text-align: center;
-  font-size: 1.5rem;
-  padding: .75rem 0;
-  font-weight: 300;
   margin-bottom:0;
+}
+
+.inline-bg{
+  display:none;
 }
 
 .slide, .results{
@@ -243,7 +244,7 @@ li{
 
 @media screen and (max-width: 992px) and (min-width: 769px) {
 
-  .quiz-container, .question, .description, .results-container{
+  .quiz-container, .question, .description, .results-container, .lead-gen{
     width:85%;
   }
 
@@ -263,7 +264,11 @@ li{
 
 @media screen and (max-width: 768px) {
 
-  .quiz-container, .results-container{
+  .inline-bg{
+    display:block;
+  }
+
+  .quiz-container, .results-container, .lead-gen{
     width:100%;
   }
 

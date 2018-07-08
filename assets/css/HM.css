@@ -46,8 +46,19 @@ button:hover{
 
 .header{
     background-color: #17a2b8;
-    color: rgba(255,255,255,.75);
-    font-weight: 300;
+}
+
+.inline-bg{
+  background: url("../images/HM-china.png");
+}
+
+header h1{
+  color: rgba(255,255,255,.75);
+  font-weight: 300;
+  font-size: 1.5rem;
+  padding: .75rem 0;
+  font-weight: 300;
+  margin-bottom: 0;
 }
 
 .question{
