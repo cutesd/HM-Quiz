@@ -44,7 +44,7 @@ button:hover{
 }
 
 ul{
-  padding-left:20px;
+  padding-left:0;
 }
 
 li{
@@ -99,6 +99,11 @@ li{
 .slide, .results{
   height:100%;
   border-radius:5px;
+}
+
+.question-num{
+  font-weight: 300;
+  letter-spacing: 1.5;
 }
 
 .results{
@@ -236,7 +241,11 @@ li{
 
 @media screen and (max-width: 992px) and (min-width: 769px) {
 
-  .quiz-container, .question, .description, .slider-desc{
+  .quiz-container, .question, .description, .results-container{
+    width:85%;
+  }
+
+  .slider-desc{
     width:75%;
   }
 

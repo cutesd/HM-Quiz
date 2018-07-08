@@ -37,7 +37,7 @@ $(document).ready(function () {
 				<h1 class="header">Which of the 8 Invisible Chains have you Trapped?</h1>
 				
 				<div class="top">
-		  				<h5 class="text-muted">Question ${questionNumber+1}.</h5>
+		  				<h5 class="text-muted question-num">Question #${questionNumber+1}</h5>
 		  				<h3 class="question">${currentQuestion.question}</h3>
 		  				<p class="description">Use the slider below to indicate where you feel in relation to this question.</p>
 						
