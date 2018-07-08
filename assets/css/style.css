@@ -45,6 +45,8 @@ button:hover{
 
 ul{
   padding-left:0;
+  margin-left: auto;
+  width: 215px;
 }
 
 li{
@@ -253,6 +255,10 @@ li{
     width:60%;
   }
 
+  ul {
+    width: 175px; 
+  }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -277,6 +283,10 @@ li{
   .quiz-slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px;
+  }
+
+  ul {
+    width: 175px; 
   }
 
 }
