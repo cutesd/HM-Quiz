@@ -77,7 +77,7 @@ $(document).ready(function () {
         var submit = document.getElementById('submit-lead');
         submit.addEventListener("click", function (e) {
             var queryStr = getResults();
-            $("#82096004684155").submit();
+            $("#inf_form_b3987557376c5ce61a4c27cb597aedd4").submit();
             window.open('http://chainsquiz.com/quiz/results.html?n=' + queryStr, '_blank');
         });
     }
