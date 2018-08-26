@@ -155,7 +155,7 @@ $(document).ready(function () {
 
         document.getElementById('submit-lead').addEventListener("click", function (e) {
             $("#inf_form_b3987557376c5ce61a4c27cb597aedd4").submit();
-            // window.open(, '_blank');
+             window.open("http://helenmacmillan.com/chains-quiz-thank-you/", '_blank');
         });
     }
 
