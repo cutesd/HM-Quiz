@@ -142,6 +142,7 @@ li{
   line-height: 1;
   margin-bottom:0;
   color: #5f6d73;
+<<<<<<< HEAD
 }
 
 .btn-toolbar{
@@ -150,6 +151,8 @@ li{
 
 .btn-group-lg > .btn{
   font-size:1.75rem;
+=======
+>>>>>>> b646d064612f095f686dbad79f1be8d488a4db54
 }
 
 .btn-group{
