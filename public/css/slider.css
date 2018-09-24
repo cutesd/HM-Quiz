@@ -1,0 +1,47 @@
+
+
+/* The slider itself */
+.quiz-slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 12px;
+    border-radius: 5px;
+    background: linear-gradient(#CCC,#FFF);
+    border: 2px solid rgba(0,0,0,.15);
+    opacity: 0.75; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.quiz-slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+.quiz-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 35px; /* Set a specific slider handle width */
+    height: 35px;
+    border-radius: 50%; 
+    background-color:#ccc;
+    border-top:    3px solid  rgba(255,255,255,.5);
+	border-bottom: 3px solid rgba(0,0,0,.25);
+    box-shadow:0 0 15px rgba(0,0,0,.75);
+    cursor: pointer; /* Cursor on hover */
+}
+
+.quiz-slider::-moz-range-thumb {
+    width: 35px; /* Set a specific slider handle width */
+    height: 35px;
+    border-radius: 50%; 
+    background-color:#ccc;
+    border-top:    3px solid  rgba(255,255,255,.5);
+	border-bottom: 3px solid rgba(0,0,0,.25);
+    box-shadow:0 0 15px rgba(0,0,0,.75);
+    cursor: pointer; /* Cursor on hover */
+}
+
+

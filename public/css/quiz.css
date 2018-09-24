@@ -43,12 +43,6 @@ button:hover{
   cursor:pointer;
 }
 
-ul{
-  padding-left:0;
-  margin-left: auto;
-  width: 215px;
-}
-
 li{
   list-style: none;
   padding: 5px;
@@ -74,8 +68,8 @@ li{
   z-index: -1;
 }
 
-.quiz-container, .results-container, .lead-gen{
-  width:75%;
+.quiz-container, .results-container{
+  width:65%;
   max-width:850px;
   max-height:500px;
   padding-bottom:50px;
@@ -92,21 +86,15 @@ li{
   background-color: #666;
   color: rgba(255,255,255,.75);
   text-align: center;
+  font-size: 1.5rem;
+  padding: .75rem 0;
+  font-weight: 300;
   margin-bottom:0;
-}
-
-.inline-bg{
-  display:none;
 }
 
 .slide, .results{
   height:100%;
   border-radius:5px;
-}
-
-.question-num{
-  font-weight: 300;
-  letter-spacing: 1.5;
 }
 
 .results{
@@ -129,27 +117,16 @@ li{
 }
 
 .question{
-  width:75%;
+  width:65%;
   font-size:1.55rem;
-  letter-spacing: 1px;
   text-align:center;
 }
 
 .description{
-  width:66%;
-  font-size: 1rem;
+  width:65%;
   text-align: center;
   line-height: 1;
   margin-bottom:0;
-  color: #5f6d73;
-}
-
-.btn-toolbar{
-  width:65%;
-}
-
-.btn-group-lg > .btn{
-  font-size:1.75rem;
 }
 
 .btn-group{
@@ -171,10 +148,6 @@ li{
 }
 
 /* ===========  RESULTS CARD ===================*/
-
-.card {
-  margin-bottom: 1rem;
-}
 
 .card-title{
   color: #666;
@@ -231,7 +204,6 @@ li{
   line-height: 0;
   width: 65%;
   margin-top: -5px;
-  color: #5f6d73;
 }
 
 .slider-output, #slideVal{
@@ -256,11 +228,7 @@ li{
 
 @media screen and (max-width: 992px) and (min-width: 769px) {
 
-  .quiz-container, .question, .description, .results-container, .lead-gen{
-    width:85%;
-  }
-
-  .slider-desc{
+  .quiz-container, .question, .description, .slider-desc{
     width:75%;
   }
 
@@ -268,19 +236,11 @@ li{
     width:60%;
   }
 
-  ul {
-    width: 175px; 
-  }
-
 }
 
 @media screen and (max-width: 768px) {
 
-  .inline-bg{
-    display:block;
-  }
-
-  .quiz-container, .results-container, .lead-gen{
+  .quiz-container, .results-container{
     width:100%;
   }
 
@@ -300,10 +260,6 @@ li{
   .quiz-slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px;
-  }
-
-  ul {
-    width: 175px; 
   }
 
 }
