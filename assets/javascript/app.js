@@ -2,22 +2,56 @@ $(document).ready(function () {
 
     const myQuestions = [
         {
-            question: "I live in total abundance, where I literally lack for nothing.",
-            answers: {
+            question: "I live in total abundance, where I literally \nlack for nothing.",
+            /*answers: {
                 // a: "Superman",
                 // b: "The Terminator",
                 // c: "Waluigi, obviously"
-            },
+            }*/
             //   correctAnswer: "c"
+            minValText: "wouldn't I love to ...",
+            maxValText: "That is my reality ... AND I'm always wanting more"
         },
-        { question: "I never worry about money, because I trust I always have more than enough." },
-        { question: "Everyone in my life sees, understands, and appreciates me for who I am." },
-        { question: "I find it easy to surrender, let go, and relax no matter what's happening in my life." },
-        { question: "I express myself freely and without fear, to anyone, anytime." },
-        { question: "There's nothing I'm afraid to see or confront in myself and others." },
-        { question: "I find it easy to accept and embrace all people and situations." },
-        { question: "Everyone in my life values me and respects my time." },
-        { question: "I am completely committed to do whatever it takes to get free of the chains that bind me." }
+        {
+            question: "I never worry about money, because I trust I always have more than enough.",
+            minValText: "I worry all the time",
+            maxValText: "I'm a freaking master manifester"
+        },
+        {
+            question: "Everyone in my life sees, understands, and appreciates me for who I am.",
+            minValText: "I feel invisible",
+            maxValText: "I feel like a rockstar"
+        },
+        {
+            question: "I find it easy to surrender, let go, and relax no matter what's happening in my life.",
+            minValText: "relax??? what is that?",
+            maxValText: "I live in a state of flow"
+        },
+        {
+            question: "I express myself freely and without fear, to anyone, anytime.",
+            minValText: "yeah right ...",
+            maxValText: "I have a strong voice and use it freely"
+        },
+        {
+            question: "There's nothing I'm afraid to see or confront in myself and others.",
+            minValText: "I'm always the last to know",
+            maxValText: "I'm known for my insight and intuition"
+        },
+        {
+            question: "I find it easy to accept and embrace all people and situations.",
+            minValText: "people piss me off A LOT",
+            maxValText: "my feathers aren't easily ruffled"
+        },
+        {
+            question: "Everyone in my life values me and respects my time.",
+            minValText: "I feel like a doormat",
+            maxValText: "I feel valued and respected"
+        },
+        {
+            question: "I am completely committed to do whatever it takes to get free of the chains that bind me.",
+            minValText: "I've never invested in my personal development",
+            maxValText: "I'll do anything to get unstuck"
+        }
     ];
 
     const myResults = [
@@ -109,19 +143,28 @@ $(document).ready(function () {
 				<div class="top">
 		  				<h5 class="text-muted question-num">Question #${questionNumber + 1}</h5>
 		  				<h3 class="question">${currentQuestion.question}</h3>
-		  				<p class="description">Use the slider below to indicate where you feel in relation to this question.</p>
+		  				<p class="description">Choose the number that indicates where you feel in relation to this question.</p>
 						
-		  				<div class="slider-container mt-4 mb-2">
-		  					<div class="flex-shrink-1 text-right slider-num">1</div>
-							<div class="p-2 w-100"><input class="quiz-slider" id="slider`+ questionNumber + `" type="range" min="1" max="10" value="5"></div>
-							<div class="flex-shrink-1 slider-num">10</div>
+		  				<div class="btn-toolbar mt-4 mb-3" role="toolbar" aria-label="number toolbar">
+						<div class="btn-group btn-group-lg mr-2" role="group" aria-label="number range">
+						  <button type="button" class="btn btn-outline-info" data-val="1">1</button>
+						  <button type="button" class="btn btn-outline-info" data-val="2">2</button>
+						  <button type="button" class="btn btn-outline-info" data-val="3">3</button>
+						  <button type="button" class="btn btn-outline-info" data-val="4">4</button>
+						  <button type="button" class="btn btn-outline-info" data-val="5">5</button>
+						  <button type="button" class="btn btn-outline-info" data-val="6">6</button>
+						  <button type="button" class="btn btn-outline-info" data-val="7">7</button>
+						  <button type="button" class="btn btn-outline-info" data-val="8">8</button>
+						  <button type="button" class="btn btn-outline-info" data-val="9">9</button>
+						  <button type="button" class="btn btn-outline-info" data-val="10">10</button>
 						</div>
+					  </div>
 
-						<div class="slider-desc d-flex">
-							<div class="p-2 mr-auto">not at all true</div>
-							<div class="p-2">absolutely true</div>
+						<div class="slider-desc d-flex justify-content-between">
+							<div class="slider-desc-text"><span>${currentQuestion.minValText}</span></div>
+							<div class="slider-desc-text"><span>${currentQuestion.maxValText}</span></div>
 						</div>
-						<p class="slider-output">Your answer: <span id="slideVal">4</span></strong>&nbsp;&nbsp;</p>
+						
   				</div> 
 
                   <div class="mt-auto bottom btn-group btn-group-lg" role="group" aria-label="Basic example">
@@ -152,13 +195,6 @@ $(document).ready(function () {
             $(`input[name='inf_custom_${myResults[i].chain}Text${n}'`).val(myResults[i].result[score]);
         }
 
-        /*
-        <input name="inf_custom_Scarcity" type="hidden" value="null" />
-						<input name="inf_custom_ScarcityText" type="hidden" value="null" />
-                        <in
-                        inf_custom_ResultPageURL
-        */
-
         $(`input[name='inf_custom_ResultPageURL'`).val('http://chainsquiz.com/quiz/results.html?n=' + queryStr);
 
         document.getElementById('submit-lead').addEventListener("click", function (e) {
@@ -169,10 +205,10 @@ $(document).ready(function () {
 
     function getResults() {
         var _arr = [];
-        for (var i = 0; i < sliders.length - 1; i++) {
-            var n = (i == 0) ? Math.floor((parseInt(document.getElementById('slider0').value) + parseInt(document.getElementById('slider1').value)) / 2) : document.getElementById('slider' + (i + 1)).value;
-            _arr.push(n);
-        }
+        // for (var i = 0; i < sliders.length - 1; i++) {
+        //     var n = (i == 0) ? Math.floor((parseInt(document.getElementById('slider0').value) + parseInt(document.getElementById('slider1').value)) / 2) : document.getElementById('slider' + (i + 1)).value;
+        //     _arr.push(n);
+        // }
         return _arr.join("-");
     }
 
@@ -191,10 +227,11 @@ $(document).ready(function () {
         slides[n].classList.remove("d-none");
         currentSlide = n;
         //
-        outputs[n].innerHTML = sliders[n].value;
-        sliders[n].oninput = function () {
-            outputs[n].innerHTML = this.value;
-        }
+        // outputs[n].innerHTML = sliders[n].value;
+        // sliders[n].oninput = function () {
+        //     outputs[n].innerHTML = this.value;
+        // }
+
         nextBtns[n].addEventListener("click", showNextSlide);
         //
         if (currentSlide === 0) {
@@ -228,8 +265,11 @@ $(document).ready(function () {
     buildQuiz();
 
     const slides = document.querySelectorAll(".slide");
-    const sliders = document.querySelectorAll(".quiz-slider");
-    const outputs = document.querySelectorAll("#slideVal");
+    let inputValues = new Array(myQuestions.length);
+    const btnBars = document.querySelectorAll(".btn-toolbar");
+    console.log(btnBars);
+    // const sliders = document.querySelectorAll(".quiz-slider");
+    // const outputs = document.querySelectorAll("#slideVal");
     const nextBtns = document.querySelectorAll("#next-btn");
     const prevBtns = document.querySelectorAll("#prev-btn");
     const submits = document.querySelectorAll('#submit-btn');
