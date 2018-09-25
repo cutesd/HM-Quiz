@@ -30,12 +30,12 @@ button{
 }
 
 button:hover{
-	background-color: #E7C45D!important;
+  background-color: #E7C45D!important;
+  border-color: #E7C45D!important;
 }
 
 .selected{
-  background-color: #17a2b8!important;
-  color:#FFF;
+  background-color: #E7C45D!important;
 }
 
 .logo {

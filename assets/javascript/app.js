@@ -129,7 +129,7 @@ $(document).ready(function () {
         const output = [];
 
         // for each question...
-        myQuestions.forEach((currentQuestion, questionNumber) => {
+        myQuestions.forEach((question, qN) => {
 
             // add this question and its answers to the output
             output.push(
@@ -141,29 +141,33 @@ $(document).ready(function () {
 				</header>
 				
 				<div class="top">
-		  				<h5 class="text-muted question-num">Question #${questionNumber + 1}</h5>
-		  				<h3 class="question">${currentQuestion.question}</h3>
-		  				<p class="description">Choose the number that indicates where you feel in relation to this question.</p>
+		  				<h5 class="text-muted question-num">Question #${qN + 1}</h5>
+		  				<h3 class="question">${question.question}</h3>
+		  				<p class="description">Choose the number that best indicates where you feel in relation <br/>to this question.</p>
 						
-		  				<div class="btn-toolbar mt-4 mb-3" id="btnBar${questionNumber}" role="toolbar" aria-label="number toolbar">
+		  				<div class="btn-toolbar mt-4 mb-3" id="btnBar${qN}" role="toolbar" aria-label="number toolbar">
 						<div class="btn-group btn-group-lg mr-2" role="group" aria-label="number range">
-						  <button type="button" class="btn btn-outline-info" data-val="1">1</button>
-						  <button type="button" class="btn btn-outline-info" data-val="2">2</button>
-						  <button type="button" class="btn btn-outline-info" data-val="3">3</button>
-						  <button type="button" class="btn btn-outline-info" data-val="4">4</button>
-						  <button type="button" class="btn btn-outline-info" data-val="5">5</button>
-						  <button type="button" class="btn btn-outline-info" data-val="6">6</button>
-						  <button type="button" class="btn btn-outline-info" data-val="7">7</button>
-						  <button type="button" class="btn btn-outline-info" data-val="8">8</button>
-						  <button type="button" class="btn btn-outline-info" data-val="9">9</button>
-						  <button type="button" class="btn btn-outline-info" data-val="10">10</button>
+						  <button type="button" class="btn btn-info" data-val="1">1</button>
+						  <button type="button" class="btn btn-info" data-val="2">2</button>
+						  <button type="button" class="btn btn-info" data-val="3">3</button>
+						  <button type="button" class="btn btn-info" data-val="4">4</button>
+						  <button type="button" class="btn btn-info" data-val="5">5</button>
+						  <button type="button" class="btn btn-info" data-val="6">6</button>
+						  <button type="button" class="btn btn-info" data-val="7">7</button>
+						  <button type="button" class="btn btn-info" data-val="8">8</button>
+						  <button type="button" class="btn btn-info" data-val="9">9</button>
+						  <button type="button" class="btn btn-info" data-val="10">10</button>
 						</div>
 					  </div>
 
 						<div class="slider-desc d-flex justify-content-between">
-							<div class="slider-desc-text">${currentQuestion.minValText}</div>
-							<div class="slider-desc-text">${currentQuestion.maxValText}</div>
-						</div>
+							<div class="slider-desc-text">${question.minValText}</div>
+							<div class="slider-desc-text">${question.maxValText}</div>
+                        </div>
+                        
+                        <div class="alert text-danger mb-3 p-0 d-none" id="alert${qN}" role="alert">
+                            * Please choose a number from above.
+                        </div>
 						
   				</div> 
 
@@ -197,7 +201,7 @@ $(document).ready(function () {
 
         $(`input[name='inf_custom_ResultPageURL'`).val('http://chainsquiz.com/quiz/results.html?n=' + queryStr);
 
-        document.getElementById('submit-lead').addEventListener("click", function (e) {
+        $('#submit-lead').addEventListener("click", function (e) {
             $("#inf_form_b3987557376c5ce61a4c27cb597aedd4").submit();
             window.open("http://helenmacmillan.com/chains-quiz-thank-you/", '_blank');
         });
@@ -254,6 +258,7 @@ $(document).ready(function () {
             console.log(inputValues);
             rmvSelected(n);
             $(this).addClass('selected');
+            rmvError();
         });
     }
 
@@ -262,11 +267,28 @@ $(document).ready(function () {
     }
 
     function showNextSlide() {
+        console.log(inputValues[currentSlide], (inputValues[currentSlide] === undefined));
+        if (inputValues[currentSlide] === undefined) {
+            showError();
+            return;
+        }
         showSlide(currentSlide + 1);
     }
 
     function showPreviousSlide() {
         showSlide(currentSlide - 1);
+    }
+
+    const showError = () => {
+        $("#alert" + currentSlide).removeClass('d-none');
+        $("#btnBar" + currentSlide).find(".btn").removeClass('btn-info');
+        $("#btnBar" + currentSlide).find(".btn").addClass('btn-danger');
+    }
+
+    const rmvError = () => {
+        $("#alert" + currentSlide).addClass('d-none');
+        $("#btnBar" + currentSlide).find(".btn").addClass('btn-info');
+        $("#btnBar" + currentSlide).find(".btn").removeClass('btn-danger');
     }
 
     const quizContainer = document.getElementById("quiz-container");
