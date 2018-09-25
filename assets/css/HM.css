@@ -33,6 +33,11 @@ button:hover{
 	background-color: #E7C45D!important;
 }
 
+.selected{
+  background-color: #17a2b8!important;
+  color:#FFF;
+}
+
 .logo {
 	left:1%;
   	max-height: 100px;

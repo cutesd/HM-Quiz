@@ -145,7 +145,7 @@ $(document).ready(function () {
 		  				<h3 class="question">${currentQuestion.question}</h3>
 		  				<p class="description">Choose the number that indicates where you feel in relation to this question.</p>
 						
-		  				<div class="btn-toolbar mt-4 mb-3" role="toolbar" aria-label="number toolbar">
+		  				<div class="btn-toolbar mt-4 mb-3" id="btnBar${questionNumber}" role="toolbar" aria-label="number toolbar">
 						<div class="btn-group btn-group-lg mr-2" role="group" aria-label="number range">
 						  <button type="button" class="btn btn-outline-info" data-val="1">1</button>
 						  <button type="button" class="btn btn-outline-info" data-val="2">2</button>
@@ -205,10 +205,10 @@ $(document).ready(function () {
 
     function getResults() {
         var _arr = [];
-        // for (var i = 0; i < sliders.length - 1; i++) {
-        //     var n = (i == 0) ? Math.floor((parseInt(document.getElementById('slider0').value) + parseInt(document.getElementById('slider1').value)) / 2) : document.getElementById('slider' + (i + 1)).value;
-        //     _arr.push(n);
-        // }
+        for (var i = 0; i < inputValues.length - 1; i++) {
+            var n = (i == 0) ? Math.floor((inputValues[0] + inputValues[1]) / 2) : inputValues[i + 1];
+            _arr.push(n);
+        }
         return _arr.join("-");
     }
 
@@ -226,11 +226,6 @@ $(document).ready(function () {
         slides[currentSlide].classList.add("d-none");
         slides[n].classList.remove("d-none");
         currentSlide = n;
-        //
-        // outputs[n].innerHTML = sliders[n].value;
-        // sliders[n].oninput = function () {
-        //     outputs[n].innerHTML = this.value;
-        // }
 
         nextBtns[n].addEventListener("click", showNextSlide);
         //
@@ -251,6 +246,21 @@ $(document).ready(function () {
         }
     }
 
+    function numberBar(n) {
+        $("#btnBar" + n).find(".btn").on("click", function (e) {
+            e.preventDefault();
+            console.log("num pressed", $(this).text());
+            inputValues[n] = parseInt($(this).text());
+            console.log(inputValues);
+            rmvSelected(n);
+            $(this).addClass('selected');
+        });
+    }
+
+    function rmvSelected(n) {
+        $("#btnBar" + n).find(".btn").removeClass('selected');
+    }
+
     function showNextSlide() {
         showSlide(currentSlide + 1);
     }
@@ -267,7 +277,9 @@ $(document).ready(function () {
     const slides = document.querySelectorAll(".slide");
     let inputValues = new Array(myQuestions.length);
     const btnBars = document.querySelectorAll(".btn-toolbar");
-    console.log(btnBars);
+    btnBars.forEach((bar, n) => {
+        numberBar(n);
+    })
     // const sliders = document.querySelectorAll(".quiz-slider");
     // const outputs = document.querySelectorAll("#slideVal");
     const nextBtns = document.querySelectorAll("#next-btn");
