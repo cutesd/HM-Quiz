@@ -161,8 +161,8 @@ $(document).ready(function () {
 					  </div>
 
 						<div class="slider-desc d-flex justify-content-between">
-							<div class="slider-desc-text"><span>${currentQuestion.minValText}</span></div>
-							<div class="slider-desc-text"><span>${currentQuestion.maxValText}</span></div>
+							<div class="slider-desc-text">${currentQuestion.minValText}</div>
+							<div class="slider-desc-text">${currentQuestion.maxValText}</div>
 						</div>
 						
   				</div> 
@@ -280,8 +280,6 @@ $(document).ready(function () {
     btnBars.forEach((bar, n) => {
         numberBar(n);
     })
-    // const sliders = document.querySelectorAll(".quiz-slider");
-    // const outputs = document.querySelectorAll("#slideVal");
     const nextBtns = document.querySelectorAll("#next-btn");
     const prevBtns = document.querySelectorAll("#prev-btn");
     const submits = document.querySelectorAll('#submit-btn');
