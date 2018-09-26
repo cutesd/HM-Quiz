@@ -156,7 +156,7 @@ li {
   margin: auto;
 }
 
-.btn-toolbar > .btn-group-lg > .btn {
+.btn-toolbar>.btn-group-lg>.btn {
   font-size: 1.75rem;
   border: 1px solid rgba(255, 255, 255, .35)
 }
@@ -192,6 +192,13 @@ li {
 
 #prev-btn {
   border-right: 2px solid #FFF;
+}
+
+/* ===========  LEAD GEN ===================*/
+
+.lead-gen .top {
+  padding: 2.5rem 5rem;
+  text-align: left;
 }
 
 /* ===========  RESULTS CARD ===================*/
@@ -296,43 +303,46 @@ li {
   }
   .quiz-container, .results-container, .lead-gen {
     width: 100%;
-    max-height:initial;
+    max-height: initial;
   }
-  .header h1{
+  .header h1 {
     font-size: 1.75rem;
-    padding: 2rem 0; 
+    padding: 2rem 0;
   }
   .top {
     height: 72%;
-    display:flex;
+    display: flex;
     align-content: center;
     flex-direction: column;
   }
-  .bottom{
-    height:11%;
+  .lead-gen .top {
+    padding: 2.5rem;
+  }
+  .bottom {
+    height: 11%;
   }
   .question, .description, .slider-desc {
     width: 90%;
-    margin-bottom:.5rem;
+    margin-bottom: .5rem;
   }
-  .question-num{
+  .question-num {
     padding-top: 3.25rem;
     font-size: 1.75rem;
   }
-  .question{
+  .question {
     font-size: 2.1rem;
   }
   .btn-toolbar {
     width: auto;
     height: 18%;
     margin-left: .5rem;
-    margin-right:.5rem;
+    margin-right: .5rem;
   }
-  .btn-toolbar > .btn-group-lg > .btn {
+  .btn-toolbar>.btn-group-lg>.btn {
     font-size: 2.1rem;
   }
-  .btn-group-lg > .btn{
-      font-size: 1.75rem;
+  .btn-group-lg>.btn {
+    font-size: 1.75rem;
   }
   .slider-container {
     width: 70%;

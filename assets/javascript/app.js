@@ -148,7 +148,7 @@ $(document).ready(function () {
                     </div>
 						
 		  				<div class="btn-toolbar mt-4 mb-3" id="btnBar${qN}" role="toolbar" aria-label="number toolbar">
-						<div class="btn-group btn-group-lg" role="group" aria-label="number range">
+						<div class="btn-group btn-group-lg mr-2" role="group" aria-label="number range">
 						  <button type="button" class="btn btn-info" data-val="1">1</button>
 						  <button type="button" class="btn btn-info" data-val="2">2</button>
 						  <button type="button" class="btn btn-info" data-val="3">3</button>
@@ -201,7 +201,7 @@ $(document).ready(function () {
 
     function showLeadGen() {
         quizContainer.classList.add("d-none");
-        $('lead-gen').removeClass('d-none');
+        document.getElementsByClassName('lead-gen')[0].classList.remove('d-none');
         //
         var queryStr = getResults();
         const _arr = queryStr.split('-');
