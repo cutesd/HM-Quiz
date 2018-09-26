@@ -188,9 +188,8 @@ $(document).ready(function () {
         //
         // Lead form buttons
         $('#submit-lead').on("click", function (e) {
-            // $("#inf_form_b3987557376c5ce61a4c27cb597aedd4").submit();
-            // window.open("http://helenmacmillan.com/chains-quiz-thank-you/", '_blank');
-            console.log("send lead form");
+            $("#inf_form_b3987557376c5ce61a4c27cb597aedd4").submit();
+            window.open("http://helenmacmillan.com/chains-quiz-thank-you/", '_blank');
         });
         $('#lead-back-btn').on("click", function(e){
             quizContainer.classList.remove('d-none');
@@ -264,9 +263,9 @@ $(document).ready(function () {
     function numberBar(n) {
         $("#btnBar" + n).find(".btn").on("click", function (e) {
             e.preventDefault();
-            console.log("num pressed", $(this).text());
+            // console.log("num pressed", $(this).text());
             inputValues[n] = parseInt($(this).text());
-            console.log(inputValues);
+            // console.log(inputValues);
             rmvSelected(n);
             $(this).addClass('selected');
             rmvError();
@@ -278,7 +277,7 @@ $(document).ready(function () {
     }
 
     function showNextSlide() {
-        console.log(inputValues[currentSlide], (inputValues[currentSlide] === undefined));
+        // console.log(inputValues[currentSlide], (inputValues[currentSlide] === undefined));
         if (inputValues[currentSlide] === undefined) {
             showError();
             return;
