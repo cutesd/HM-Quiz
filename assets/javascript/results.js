@@ -37,9 +37,9 @@ var showResults = function(results) {
             "Invisibility": parseInt(_arr[2]),
             "Control": parseInt(_arr[3]),
             "Repression": parseInt(_arr[4]),
-            "Blindness": parseInt(_arr[5]),
+            "Ambiguity": parseInt(_arr[5]),
             "Disconnection": parseInt(_arr[6]),
-            "Under-Value": parseInt(_arr[7])
+            "Insignificance": parseInt(_arr[7])
         };
 
         console.log(myResults);
