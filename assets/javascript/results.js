@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var showResults = function (results) {
-        console.log("showResults", results)
+        // console.log("showResults", results)
         //
         var subtitles = document.querySelectorAll(".card-subtitle");
         var lows = document.querySelectorAll("#low");
@@ -9,7 +9,7 @@ $(document).ready(function () {
 
         //
         var _arr = results.split("-");
-        console.log(_arr)
+        // console.log(_arr)
 
         for (var i = 0; i < _arr.length; i++) {
             lows[i].classList.add('d-none');
@@ -17,7 +17,7 @@ $(document).ready(function () {
             his[i].classList.add('d-none');
             //
             var n = parseInt(_arr[i]);
-            console.log(i, _arr[i], n);
+            // console.log(i, _arr[i], n);
             if (n > 8) {
                 subtitles[i].textContent = "Your Score: HIGH";
                 his[i].classList.remove('d-none');
@@ -32,17 +32,16 @@ $(document).ready(function () {
 
 
         var myResults = {
-            "Scarcity": parseInt(_arr[0]),
-            "Mistrust": parseInt(_arr[1]),
-            "Invisibility": parseInt(_arr[2]),
-            "Control": parseInt(_arr[3]),
-            "Repression": parseInt(_arr[4]),
-            "Ambiguity": parseInt(_arr[5]),
             "Disconnection": parseInt(_arr[6]),
-            "Insignificance": parseInt(_arr[7])
+            "Ambiguity": parseInt(_arr[5]),
+            "Repression": parseInt(_arr[4]),
+            "Insignificance": parseInt(_arr[7]),
+            "Control": parseInt(_arr[3]),
+            "Invisibility": parseInt(_arr[2]),
+            "Mistrust": parseInt(_arr[1]),
+            "Scarcity": parseInt(_arr[0])            
         };
 
-        console.log(myResults);
 
         var myBarchart = new Barchart(
             {
@@ -52,7 +51,8 @@ $(document).ready(function () {
                 gridScale: 1,
                 gridColor: "#bbb",
                 data: myResults,
-                colors: ["#ee3143", "#f47723", "#f4ba1a", "#05af4c", "#279ED8", "#37459D", "#7361ab", "#F88BA7"]
+                colors: ["#a83dff", "#2a90ff", "#0defff", "#ff91ca", "#8aff4a", "#f5f809", "#ffa20e", "#f41321"]
+                
                 /*root - ee3143
                 sacral - f47723
                 solarplexus - f4ba1a
@@ -60,6 +60,15 @@ $(document).ready(function () {
                 throat - 279ED8
                 3rd-eye - 7361ab
                 crown - F88BA7 */
+
+                /*red: f41321
+                Orange: ffa20e
+                Yellow: f5f809
+                Green: 8aff4a
+                Pink: ff91ca
+                cyan: 0defff
+                Blue: 2a90ff
+                Purple: a83dff */
             });
 
         myBarchart.draw();
@@ -208,7 +217,7 @@ $(document).ready(function () {
             queries.n = "5-5-5-5-5-5-5-5"
         }
     });
-    console.log("col width", $("#graph").width());
+    // console.log("col width", $("#graph").width());
     var results = new showResults(queries.n);
 
     //
