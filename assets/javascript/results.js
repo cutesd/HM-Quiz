@@ -73,6 +73,8 @@ $(document).ready(function () {
 
         myBarchart.draw();
 
+
+        // accordion toggle
         const closeAll = () =>{
             for (i = 0; i < 8; i++) {
                 $('#result-card'+i).collapse('hide');
@@ -81,12 +83,24 @@ $(document).ready(function () {
 
         $('div[id^="result-card"]').on('show.bs.collapse', function () {
             closeAll();
-            console.log("clicked")
           });
 
         //
         $('.close-btn').on("click", function (e) {
            closeAll();
+        });
+
+        // vid transcript toggle
+        $('#close-trans').on('click', function(e){
+            $('#vid-transcript').collapse('hide');
+        });
+
+        $("#vid-transcript").on('show.bs.collapse', function () {
+           $("#vid-trans-link").text('Click here to close video transcript.');
+        });
+
+        $("#vid-transcript").on('hide.bs.collapse', function () {
+            $("#vid-trans-link").text('Click here to read video transcript.');
         });
     }
 
@@ -197,24 +211,11 @@ $(document).ready(function () {
                 a.setAttribute("aria-expanded", "false");
                 a.setAttribute("aria-controls", "result-card" + barIndex);
                 a.innerHTML = `<nobr>${categ}: ${this.options.data[categ]}</nobr>`;
-                // a.addEventListener("click", legendToggle);
                 li.append(a);
                 ul.append(li);
                 barIndex++;
             }
 
-        }
-
-        function legendToggle() {
-            // if (selLeg !== undefined) {
-            //     var card = $(selLeg);
-            //     var targetDiv = card.find("#closeBtn");
-            //     var clickEvent = document.createEvent("MouseEvents");
-            //     clickEvent.initMouseEvent("click", true, true, window, 1, 0, 0, 0, 0,
-            //         false, false, false, false, 0, null);
-            //     targetDiv.dispatchEvent(clickEvent);
-            // }
-            // selLeg = $(this).attr('aria-controls');
         }
     }
 
