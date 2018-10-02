@@ -186,12 +186,41 @@ $(document).ready(function () {
         // finally combine our output list into one string of HTML and put it on the page
         quizContainer.innerHTML = output.join("");
         //
-        // Lead form buttons
-        $('#submit-lead').on("click", function (e) {
-            $("#inf_form_b3987557376c5ce61a4c27cb597aedd4").submit();
-            window.open("http://helenmacmillan.com/chains-quiz-thank-you/", '_blank');
+
+
+        // Lead Form
+        $('#inf_field_Email').on('change', function(){
+            $('#inf_field_Email').removeClass('is-invalid');
+            $('#email-feedback').removeClass('is-invalid');
         });
-        $('#lead-back-btn').on("click", function(e){
+
+        const validateEmail = () => {
+            var email = $('#inf_field_Email').val();
+            if (email === undefined || email.length < 1) return false;
+            //
+            if (email.indexOf('@') < 0 || email.indexOf('.') < 0 || email.split('.')[1].length < 1) {
+                $('#inf_field_Email').addClass('is-invalid');
+                $('#email-feedback').addClass('is-invalid');
+                return false;
+            }
+            //
+            return true;
+        }
+
+
+        $('#submit-lead').on("click", function (e) {
+           //
+            if (form.checkValidity() === false || !validateEmail()) {
+                event.preventDefault();
+                event.stopPropagation();
+            } else {
+                $("#inf_form_b3987557376c5ce61a4c27cb597aedd4").submit();
+                window.open("http://helenmacmillan.com/chains-quiz-thank-you/", '_blank');
+            }
+            form.classList.add('was-validated');
+        });
+        //
+        $('#lead-back-btn').on("click", function (e) {
             quizContainer.classList.remove('d-none');
             $('.lead-gen').addClass('d-none');
             showPreviousSlide();
@@ -214,7 +243,7 @@ $(document).ready(function () {
 
         $(`input[name='inf_custom_ResultPageURL'`).val('http://chainsquiz.com/quiz/results.html?n=' + queryStr);
 
-        
+
     }
 
     function getResults() {

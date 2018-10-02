@@ -11,7 +11,8 @@
 	<title>Quiz for Helen</title>
 
 	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
 	 crossorigin="anonymous">
@@ -94,61 +95,85 @@
 
 				<h3 class="question">Where should we send your results?</h3>
 
-				<form accept-charset="UTF-8" action="https://zg121.infusionsoft.com/app/form/process/b3987557376c5ce61a4c27cb597aedd4" class="infusion-form"
-				 id="inf_form_b3987557376c5ce61a4c27cb597aedd4" method="POST">
+				<form accept-charset="UTF-8" action="https://zg121.infusionsoft.com/app/form/process/b3987557376c5ce61a4c27cb597aedd4"
+				 class="infusion-form needs-validation" id="inf_form_b3987557376c5ce61a4c27cb597aedd4" method="POST" novalidate>
 					<input name="inf_form_xid" type="hidden" value="b3987557376c5ce61a4c27cb597aedd4" />
 					<input name="inf_form_name" type="hidden" value="Quiz LeadGen" />
 					<input name="infusionsoft_version" type="hidden" value="1.70.0.58116" />
-					
-						<input name="inf_custom_Scarcity" type="hidden" />
-						<input name="inf_custom_ScarcityText" type="hidden" />
-						<input name="inf_custom_MisTrust" type="hidden" />
-						<input name="inf_custom_MisTrustText" type="hidden" />
-						<input name="inf_custom_Invisibility" type="hidden" />
-						<input name="inf_custom_InvisibilityText" type="hidden" />
-						<input name="inf_custom_Control" type="hidden" />
-						<input name="inf_custom_ControlText" type="hidden" />
-						<input name="inf_custom_Repression" type="hidden" />
-						<input name="inf_custom_RepressionText0" type="hidden" />
-						<input name="inf_custom_Blindness" type="hidden" />
-						<input name="inf_custom_BlindnessText" type="hidden" />
-						<input name="inf_custom_Disconnection" type="hidden" />
-						<input name="inf_custom_DisconnectionText" type="hidden" />
-						<input name="inf_custom_UnderValue" type="hidden" />
-						<input name="inf_custom_UnderValueText0" type="hidden" />
-						<input name="inf_custom_ResultPageURL" type="hidden" />
+
+					<input name="inf_custom_Scarcity" type="hidden" />
+					<input name="inf_custom_ScarcityText" type="hidden" />
+					<input name="inf_custom_MisTrust" type="hidden" />
+					<input name="inf_custom_MisTrustText" type="hidden" />
+					<input name="inf_custom_Invisibility" type="hidden" />
+					<input name="inf_custom_InvisibilityText" type="hidden" />
+					<input name="inf_custom_Control" type="hidden" />
+					<input name="inf_custom_ControlText" type="hidden" />
+					<input name="inf_custom_Repression" type="hidden" />
+					<input name="inf_custom_RepressionText0" type="hidden" />
+					<input name="inf_custom_Blindness" type="hidden" />
+					<input name="inf_custom_BlindnessText" type="hidden" />
+					<input name="inf_custom_Disconnection" type="hidden" />
+					<input name="inf_custom_DisconnectionText" type="hidden" />
+					<input name="inf_custom_UnderValue" type="hidden" />
+					<input name="inf_custom_UnderValueText0" type="hidden" />
+					<input name="inf_custom_ResultPageURL" type="hidden" />
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
-							<label for="inf_field_FirstName">First Name *</label>
-							<input class="form-control" id="inf_field_FirstName" name="inf_field_FirstName" placeholder="" type="text" />
+							<label for="inf_field_FirstName">First Name</label>
+							<input class="form-control" id="inf_field_FirstName" name="inf_field_FirstName" placeholder="" type="text"
+							 required />
+							<div class="invalid-feedback">
+								Please enter your first name.
+							</div>
 						</div>
 						<div class="form-group col-md-6">
-							<label for="inf_field_LastName">Last Name *</label>
-							<input class="form-control" id="inf_field_LastName" name="inf_field_LastName" placeholder="" type="text" />
+							<label for="inf_field_LastName">Last Name</label>
+							<input class="form-control" id="inf_field_LastName" name="inf_field_LastName" placeholder="" type="text"
+							 required />
+							<div class="invalid-feedback">
+								Please enter your last name.
+							</div>
 						</div>
 					</div>
-					<div class="form-group row justify-content-end">
-						<label for="inf_field_Email" class="col-sm-2 col-form-label">Email *</label>
-						<div class="col-sm-10">
-							<input class="form-control" id="inf_field_Email" name="inf_field_Email" placeholder="example@email.com" type="text" />
-						</div>
-						<div class="col-sm-10">
+					<div class="form-group">
+						<label for="inf_field_Email">Email</label>
+						<input class="form-control" id="inf_field_Email" name="inf_field_Email" placeholder="example@email.com" type="text"
+							 required />
+							<div class="invalid-feedback" id="email-feedback">
+								Please enter a valid email.
+							</div>
 							<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-						</div>
 					</div>
 					<!-- <div class="form-group row">
 						<label for="inf_field_Phone1" class="col-sm-2 col-form-label">Phone</label>
 						<div class="col-sm-10">
 							<input class="form-control" id="inf_field_Phone1" name="inf_field_Phone1" placeholder="555-555-5555" type="text" />
 						</div>
-					</div> -->
-					<div class="form-group form-check">
-						<span class="infusion-option">
-							<input checked="checked" id="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan" name="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan"
-							 type="checkbox" value="1751" />
-							<label for="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan">&nbsp;I know I am free to unsubscribe at anytime. *</label>
-						</span>
+					</div> 
+				
+				<div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+				-->
+					<div class="form-group">
+						<div class="form-check">
+							<span class="infusion-option">
+								<input class="form-check-input" id="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan" name="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan"
+								 type="checkbox" checked required />
+								<label class="form-check-label" for="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan">&nbsp;I know I am free to unsubscribe
+									at anytime.</label>
+								<div class="invalid-feedback">Example invalid feedback text</div>
+							</span>
+						</div>
 					</div>
 					<button type="submit" class="d-none">Submit</button>
 
