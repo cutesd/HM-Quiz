@@ -79,7 +79,7 @@ li {
   z-index: -1;
 }
 
-.quiz-container, .results-container, .lead-gen {
+.quiz-container, .lead-gen {
   width: 75%;
   max-width: 850px;
   max-height: 500px;
@@ -283,7 +283,7 @@ li {
 @media screen and (min-width: 993px) {}
 
 @media screen and (max-width: 992px) and (min-width: 769px) {
-  .quiz-container, .question, .description, .results-container, .lead-gen {
+  .quiz-container, .question, .description, .lead-gen {
     width: 85%;
   }
   .slider-desc {
@@ -301,7 +301,7 @@ li {
   .inline-bg {
     display: block;
   }
-  .quiz-container, .results-container, .lead-gen {
+  .quiz-container, .lead-gen {
     width: 100%;
     max-height: initial;
   }

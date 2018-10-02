@@ -1,7 +1,7 @@
 $(document).ready(function () {
-var showResults = function(results) {
-    console.log("showResults", results)    
-    //
+    var showResults = function (results) {
+        console.log("showResults", results)
+        //
         var subtitles = document.querySelectorAll(".card-subtitle");
         var lows = document.querySelectorAll("#low");
         var meds = document.querySelectorAll("#med");
@@ -30,7 +30,7 @@ var showResults = function(results) {
             }
         }
 
-        
+
         var myResults = {
             "Scarcity": parseInt(_arr[0]),
             "Mistrust": parseInt(_arr[1]),
@@ -54,12 +54,12 @@ var showResults = function(results) {
                 data: myResults,
                 colors: ["#ee3143", "#f47723", "#f4ba1a", "#05af4c", "#279ED8", "#37459D", "#7361ab", "#F88BA7"]
                 /*root - ee3143
-sacral - f47723
-solarplexus - f4ba1a
-heart - 05af4c
-throat - 279ED8
-3rd-eye - 7361ab
-crown - F88BA7 */
+                sacral - f47723
+                solarplexus - f4ba1a
+                heart - 05af4c
+                throat - 279ED8
+                3rd-eye - 7361ab
+                crown - F88BA7 */
             });
 
         myBarchart.draw();
@@ -70,7 +70,7 @@ crown - F88BA7 */
     //
     //
     const myCanvas = document.getElementById("myCanvas");
-    myCanvas.width = 350;
+    myCanvas.width = $("#graph").width();
     myCanvas.height = 300;
     var ctx = myCanvas.getContext("2d");
 
@@ -103,7 +103,7 @@ crown - F88BA7 */
         this.draw = function () {
             var maxValue = 10;
             var canvasActualHeight = this.canvas.height - this.options.padding * 2;
-            var canvasActualWidth = this.canvas.width - this.options.padding * 2;
+            var canvasActualWidth = this.canvas.width - (this.options.padding + 5);
 
             //drawing the grid lines
             var gridValue = 0;
@@ -171,7 +171,7 @@ crown - F88BA7 */
                 a.setAttribute("role", "button");
                 a.setAttribute("aria-expanded", "false");
                 a.setAttribute("aria-controls", "result-card" + barIndex);
-                a.textContent = categ + ": " + this.options.data[categ];
+                a.innerHTML = `<nobr>${categ}: ${this.options.data[categ]}</nobr>`;
                 a.addEventListener("click", legendToggle);
                 li.append(a);
                 ul.append(li);
@@ -196,21 +196,22 @@ crown - F88BA7 */
     //
     //
     //
-  
-    
 
-        var queries = {};
-        $.each(document.location.search.substr(1).split('&'), function (c, q) {
+
+
+    var queries = {};
+    $.each(document.location.search.substr(1).split('&'), function (c, q) {
+        if (q.length > 0) {
             var i = q.split('=');
             queries[i[0].toString()] = i[1].toString();
-        });
-        console.log("queries", queries);
-    
-        console.log(Barchart, showResults);
-    
-        var results = new showResults(queries.n);
-    
-        //
-        //
-        // end
+        } else {
+            queries.n = "5-5-5-5-5-5-5-5"
+        }
     });
+    console.log("col width", $("#graph").width());
+    var results = new showResults(queries.n);
+
+    //
+    //
+    // end
+});
