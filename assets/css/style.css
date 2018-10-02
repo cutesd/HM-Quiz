@@ -63,6 +63,14 @@ li {
   text-transform: uppercase;
 }
 
+.font-sm{
+  font-size: 1rem;
+}
+
+.underline{
+  text-decoration: underline;
+}
+
 .logo {
   display: block;
   position: absolute;
@@ -223,18 +231,29 @@ li {
   font-size: 2rem;
 }
 
-.close-btn a {
+.close-btn {
   color: #bbb;
   padding: 7px 5px 0px 5px;
 }
 
-.close-btn a:hover {
+.close-btn:hover {
   background-color: #17a2b8;
   color: #FFF;
+  cursor: pointer;
 }
 
 .fa-window-close {
   padding-right: 5px;
+}
+
+#results-video{
+  width: 736px; 
+  height: 414px;
+}
+
+#vid-transcript{
+  font-size: .9rem;
+  line-height: 1.7;
 }
 
 /* ===========  SLIDER ===================*/
@@ -359,5 +378,9 @@ li {
   }
   ul {
     width: 175px;
+  }
+  #results-video{
+    width: auto; 
+    height: auto;
   }
 }

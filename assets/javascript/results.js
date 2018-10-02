@@ -39,20 +39,20 @@ $(document).ready(function () {
             "Control": parseInt(_arr[3]),
             "Invisibility": parseInt(_arr[2]),
             "Mistrust": parseInt(_arr[1]),
-            "Scarcity": parseInt(_arr[0])            
+            "Scarcity": parseInt(_arr[0])
         };
 
 
         var myBarchart = new Barchart(
             {
                 canvas: myCanvas,
-                seriesName: "Your Results",
+                seriesName: "Your Chains Scores",
                 padding: 28,
                 gridScale: 1,
                 gridColor: "#bbb",
                 data: myResults,
                 colors: ["#a83dff", "#2a90ff", "#0defff", "#ff91ca", "#8aff4a", "#f5f809", "#ffa20e", "#f41321"]
-                
+
                 /*root - ee3143
                 sacral - f47723
                 solarplexus - f4ba1a
@@ -72,6 +72,22 @@ $(document).ready(function () {
             });
 
         myBarchart.draw();
+
+        const closeAll = () =>{
+            for (i = 0; i < 8; i++) {
+                $('#result-card'+i).collapse('hide');
+            }
+        }
+
+        $('div[id^="result-card"]').on('show.bs.collapse', function () {
+            closeAll();
+            console.log("clicked")
+          });
+
+        //
+        $('.close-btn').on("click", function (e) {
+           closeAll();
+        });
     }
 
 
@@ -181,7 +197,7 @@ $(document).ready(function () {
                 a.setAttribute("aria-expanded", "false");
                 a.setAttribute("aria-controls", "result-card" + barIndex);
                 a.innerHTML = `<nobr>${categ}: ${this.options.data[categ]}</nobr>`;
-                a.addEventListener("click", legendToggle);
+                // a.addEventListener("click", legendToggle);
                 li.append(a);
                 ul.append(li);
                 barIndex++;
@@ -190,15 +206,15 @@ $(document).ready(function () {
         }
 
         function legendToggle() {
-            if (selLeg !== undefined) {
-                var card = document.getElementById(selLeg);
-                var targetDiv = card.querySelector("#closeBtn");
-                var clickEvent = document.createEvent("MouseEvents");
-                clickEvent.initMouseEvent("click", true, true, window, 1, 0, 0, 0, 0,
-                    false, false, false, false, 0, null);
-                targetDiv.dispatchEvent(clickEvent);
-            }
-            selLeg = $(this).attr('aria-controls');
+            // if (selLeg !== undefined) {
+            //     var card = $(selLeg);
+            //     var targetDiv = card.find("#closeBtn");
+            //     var clickEvent = document.createEvent("MouseEvents");
+            //     clickEvent.initMouseEvent("click", true, true, window, 1, 0, 0, 0, 0,
+            //         false, false, false, false, 0, null);
+            //     targetDiv.dispatchEvent(clickEvent);
+            // }
+            // selLeg = $(this).attr('aria-controls');
         }
     }
 
@@ -219,7 +235,6 @@ $(document).ready(function () {
     });
     // console.log("col width", $("#graph").width());
     var results = new showResults(queries.n);
-
     //
     //
     // end
