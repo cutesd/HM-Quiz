@@ -97,7 +97,7 @@ $(document).ready(function () {
             }
         },
         {
-            chain: "Ambiguity",
+            chain: "Blindness",
             result: {
                 low: "You feel like you’re in a fog. You are baffled at how and why people do what they do - like they are conundrums you’ll never understand. It’s as if you have blinders in certain areas of your life. They were likely instilled in you at a young age, but it’s never too late to remove them and SEE with the clarity that is your birthright. Just knowing this now has already started the process of change.",
                 medium: "You are awakening more and more and seeing what used to be unseen. Your eyes are open. Your vision is clearing. You are learning to trust your own sight. And you are ready to see and understand even more.",
@@ -113,7 +113,7 @@ $(document).ready(function () {
             }
         },
         {
-            chain: "Insignificance",
+            chain: "UnderValue",
             result: {
                 low: "You feel like a lowly person, perhaps a servant to life, and unworthy of good things. This is a hard burden to bear. But you don’t have to stay in this belief structure. With the right support, you can SHIFT your perspective and embrace your self-worth.",
                 medium: "With this score, you are learning to value yourself, love yourself, and receive good things in life. With some focused coaching support, you can step into a receiving flow that makes everything even easier.",
@@ -207,7 +207,6 @@ $(document).ready(function () {
             return true;
         }
 
-
         $('#submit-lead').on("click", function (e) {
            //
             if (form.checkValidity() === false || !validateEmail()) {
@@ -227,6 +226,7 @@ $(document).ready(function () {
         });
     }
 
+
     function showLeadGen() {
         quizContainer.classList.add("d-none");
         document.getElementsByClassName('lead-gen')[0].classList.remove('d-none');
@@ -243,8 +243,8 @@ $(document).ready(function () {
 
         $(`input[name='inf_custom_ResultPageURL'`).val('http://chainsquiz.com/quiz/results.html?n=' + queryStr);
 
-
     }
+
 
     function getResults() {
         var _arr = [];
@@ -254,6 +254,7 @@ $(document).ready(function () {
         }
         return _arr.join("-");
     }
+
 
     parseResults = (n) => {
         if (n > 8)
