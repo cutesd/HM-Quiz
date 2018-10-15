@@ -51,7 +51,7 @@ button:hover {
 
 ul {
   padding-left: 0;
-  margin-left: auto;
+  /* margin-left: auto; */
   width: 215px;
 }
 
@@ -61,6 +61,14 @@ li {
   font-size: 1rem;
   font-weight: 400;
   text-transform: uppercase;
+}
+
+.font-sm{
+  font-size: 1rem;
+}
+
+.underline{
+  text-decoration: underline;
 }
 
 .logo {
@@ -79,7 +87,7 @@ li {
   z-index: -1;
 }
 
-.quiz-container, .results-container, .lead-gen {
+.quiz-container, .lead-gen {
   width: 75%;
   max-width: 850px;
   max-height: 500px;
@@ -223,18 +231,29 @@ li {
   font-size: 2rem;
 }
 
-.close-btn a {
+.close-btn {
   color: #bbb;
   padding: 7px 5px 0px 5px;
 }
 
-.close-btn a:hover {
+.close-btn:hover {
   background-color: #17a2b8;
   color: #FFF;
+  cursor: pointer;
 }
 
 .fa-window-close {
   padding-right: 5px;
+}
+
+#results-video{
+  width: 736px; 
+  height: 414px;
+}
+
+#vid-transcript{
+  font-size: .9rem;
+  line-height: 1.7;
 }
 
 /* ===========  SLIDER ===================*/
@@ -283,7 +302,7 @@ li {
 @media screen and (min-width: 993px) {}
 
 @media screen and (max-width: 992px) and (min-width: 769px) {
-  .quiz-container, .question, .description, .results-container, .lead-gen {
+  .quiz-container, .question, .description, .lead-gen {
     width: 85%;
   }
   .slider-desc {
@@ -301,7 +320,7 @@ li {
   .inline-bg {
     display: block;
   }
-  .quiz-container, .results-container, .lead-gen {
+  .quiz-container, .lead-gen {
     width: 100%;
     max-height: initial;
   }
@@ -359,5 +378,9 @@ li {
   }
   ul {
     width: 175px;
+  }
+  #results-video{
+    width: auto; 
+    height: auto;
   }
 }

@@ -1,7 +1,7 @@
 $(document).ready(function () {
-var showResults = function(results) {
-    console.log("showResults", results)    
-    //
+    var showResults = function (results) {
+        // console.log("showResults", results)
+        //
         var subtitles = document.querySelectorAll(".card-subtitle");
         var lows = document.querySelectorAll("#low");
         var meds = document.querySelectorAll("#med");
@@ -9,7 +9,7 @@ var showResults = function(results) {
 
         //
         var _arr = results.split("-");
-        console.log(_arr)
+        // console.log(_arr)
 
         for (var i = 0; i < _arr.length; i++) {
             lows[i].classList.add('d-none');
@@ -17,7 +17,7 @@ var showResults = function(results) {
             his[i].classList.add('d-none');
             //
             var n = parseInt(_arr[i]);
-            console.log(i, _arr[i], n);
+            // console.log(i, _arr[i], n);
             if (n > 8) {
                 subtitles[i].textContent = "Your Score: HIGH";
                 his[i].classList.remove('d-none');
@@ -30,39 +30,78 @@ var showResults = function(results) {
             }
         }
 
-        
+
         var myResults = {
-            "Scarcity": parseInt(_arr[0]),
-            "Mistrust": parseInt(_arr[1]),
-            "Invisibility": parseInt(_arr[2]),
-            "Control": parseInt(_arr[3]),
-            "Repression": parseInt(_arr[4]),
-            "Blindness": parseInt(_arr[5]),
             "Disconnection": parseInt(_arr[6]),
-            "Under-Value": parseInt(_arr[7])
+            "Ambiguity": parseInt(_arr[5]),
+            "Repression": parseInt(_arr[4]),
+            "Insignificance": parseInt(_arr[7]),
+            "Control": parseInt(_arr[3]),
+            "Invisibility": parseInt(_arr[2]),
+            "Mistrust": parseInt(_arr[1]),
+            "Scarcity": parseInt(_arr[0])
         };
 
-        console.log(myResults);
 
         var myBarchart = new Barchart(
             {
                 canvas: myCanvas,
-                seriesName: "Your Results",
+                seriesName: "Your Chains Scores",
                 padding: 28,
                 gridScale: 1,
                 gridColor: "#bbb",
                 data: myResults,
-                colors: ["#ee3143", "#f47723", "#f4ba1a", "#05af4c", "#279ED8", "#37459D", "#7361ab", "#F88BA7"]
+                colors: ["#a83dff", "#2a90ff", "#0defff", "#ff91ca", "#8aff4a", "#f5f809", "#ffa20e", "#f41321"]
+
                 /*root - ee3143
-sacral - f47723
-solarplexus - f4ba1a
-heart - 05af4c
-throat - 279ED8
-3rd-eye - 7361ab
-crown - F88BA7 */
+                sacral - f47723
+                solarplexus - f4ba1a
+                heart - 05af4c
+                throat - 279ED8
+                3rd-eye - 7361ab
+                crown - F88BA7 */
+
+                /*red: f41321
+                Orange: ffa20e
+                Yellow: f5f809
+                Green: 8aff4a
+                Pink: ff91ca
+                cyan: 0defff
+                Blue: 2a90ff
+                Purple: a83dff */
             });
 
         myBarchart.draw();
+
+
+        // accordion toggle
+        const closeAll = () =>{
+            for (i = 0; i < 8; i++) {
+                $('#result-card'+i).collapse('hide');
+            }
+        }
+
+        $('div[id^="result-card"]').on('show.bs.collapse', function () {
+            closeAll();
+          });
+
+        //
+        $('.close-btn').on("click", function (e) {
+           closeAll();
+        });
+
+        // vid transcript toggle
+        $('#close-trans').on('click', function(e){
+            $('#vid-transcript').collapse('hide');
+        });
+
+        $("#vid-transcript").on('show.bs.collapse', function () {
+           $("#vid-trans-link").text('Click here to close video transcript.');
+        });
+
+        $("#vid-transcript").on('hide.bs.collapse', function () {
+            $("#vid-trans-link").text('Click here to read video transcript.');
+        });
     }
 
 
@@ -70,7 +109,7 @@ crown - F88BA7 */
     //
     //
     const myCanvas = document.getElementById("myCanvas");
-    myCanvas.width = 350;
+    myCanvas.width = $("#graph").width();
     myCanvas.height = 300;
     var ctx = myCanvas.getContext("2d");
 
@@ -103,7 +142,7 @@ crown - F88BA7 */
         this.draw = function () {
             var maxValue = 10;
             var canvasActualHeight = this.canvas.height - this.options.padding * 2;
-            var canvasActualWidth = this.canvas.width - this.options.padding * 2;
+            var canvasActualWidth = this.canvas.width - (this.options.padding + 5);
 
             //drawing the grid lines
             var gridValue = 0;
@@ -171,46 +210,33 @@ crown - F88BA7 */
                 a.setAttribute("role", "button");
                 a.setAttribute("aria-expanded", "false");
                 a.setAttribute("aria-controls", "result-card" + barIndex);
-                a.textContent = categ + ": " + this.options.data[categ];
-                a.addEventListener("click", legendToggle);
+                a.innerHTML = `<nobr>${categ}: ${this.options.data[categ]}</nobr>`;
                 li.append(a);
                 ul.append(li);
                 barIndex++;
             }
 
         }
-
-        function legendToggle() {
-            if (selLeg !== undefined) {
-                var card = document.getElementById(selLeg);
-                var targetDiv = card.querySelector("#closeBtn");
-                var clickEvent = document.createEvent("MouseEvents");
-                clickEvent.initMouseEvent("click", true, true, window, 1, 0, 0, 0, 0,
-                    false, false, false, false, 0, null);
-                targetDiv.dispatchEvent(clickEvent);
-            }
-            selLeg = $(this).attr('aria-controls');
-        }
     }
 
     //
     //
     //
-  
-    
 
-        var queries = {};
-        $.each(document.location.search.substr(1).split('&'), function (c, q) {
+
+
+    var queries = {};
+    $.each(document.location.search.substr(1).split('&'), function (c, q) {
+        if (q.length > 0) {
             var i = q.split('=');
             queries[i[0].toString()] = i[1].toString();
-        });
-        console.log("queries", queries);
-    
-        console.log(Barchart, showResults);
-    
-        var results = new showResults(queries.n);
-    
-        //
-        //
-        // end
+        } else {
+            queries.n = "5-5-5-5-5-5-5-5"
+        }
     });
+    // console.log("col width", $("#graph").width());
+    var results = new showResults(queries.n);
+    //
+    //
+    // end
+});
