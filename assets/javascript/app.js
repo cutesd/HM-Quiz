@@ -208,6 +208,7 @@ $(document).ready(function () {
         }
 
         $('#submit-lead').on("click", function (e) {
+            var form = $("#inf_form_b3987557376c5ce61a4c27cb597aedd4")[0];
            //
             if (form.checkValidity() === false || !validateEmail()) {
                 event.preventDefault();
