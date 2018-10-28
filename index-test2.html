@@ -101,23 +101,23 @@
 					<input name="inf_form_name" type="hidden" value="Quiz LeadGen" />
 					<input name="infusionsoft_version" type="hidden" value="1.70.0.58116" />
 
-					<input name="inf_custom_Scarcity" type="text" />
-					<input name="inf_custom_ScarcityText" type="text" />
-					<input name="inf_custom_MisTrust" type="text" />
-					<input name="inf_custom_MisTrustText" type="text" />
-					<input name="inf_custom_Invisibility" type="text" />
-					<input name="inf_custom_InvisibilityText" type="text" />
-					<input name="inf_custom_Control" type="text" />
-					<input name="inf_custom_ControlText" type="text" />
-					<input name="inf_custom_Repression" type="text" />
-					<input name="inf_custom_RepressionText0" type="text" />
-					<input name="inf_custom_Blindness" type="text" />
-					<input name="inf_custom_BlindnessText" type="text" />
-					<input name="inf_custom_Disconnection" type="text" />
-					<input name="inf_custom_DisconnectionText" type="text" />
-					<input name="inf_custom_UnderValue" type="text" />
-					<input name="inf_custom_UnderValueText0" type="text" />
-					<input name="inf_custom_ResultPageURL" type="text" />
+					<input name="inf_custom_Scarcity" type="hidden" />
+					<input name="inf_custom_ScarcityText" type="hidden" />
+					<input name="inf_custom_MisTrust" type="hidden" />
+					<input name="inf_custom_MisTrustText" type="hidden" />
+					<input name="inf_custom_Invisibility" type="hidden" />
+					<input name="inf_custom_InvisibilityText" type="hidden" />
+					<input name="inf_custom_Control" type="hidden" />
+					<input name="inf_custom_ControlText" type="hidden" />
+					<input name="inf_custom_Repression" type="hidden" />
+					<input name="inf_custom_RepressionText0" type="hidden" />
+					<input name="inf_custom_Blindness" type="hidden" />
+					<input name="inf_custom_BlindnessText" type="hidden" />
+					<input name="inf_custom_Disconnection" type="hidden" />
+					<input name="inf_custom_DisconnectionText" type="hidden" />
+					<input name="inf_custom_UnderValue" type="hidden" />
+					<input name="inf_custom_UnderValueText0" type="hidden" />
+					<input name="inf_custom_ResultPageURL" type="hidden" />
 
 					<div class="form-row">
 						<div class="form-group col-md-6">
@@ -172,10 +172,94 @@
 
 		</div>
 
-		
+		<div class="position-absolute" style="bottom:0; right:0;">
+			<a class="nav-link" data-toggle="modal" data-target="#contactModal" data-subject="Contact Me">Contact
+				Me</a>
+		</div>
 
 	</main>
 
+
+	<!-- MODAL - CONTACT 
+		=======================================-->
+
+		<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+	
+				<div class="modal-content email-form">
+					<div class="modal-header form-top">
+						<div class="row">
+							<div class="col-3">
+								<i class="fa fa-envelope-square" aria-hidden="true"></i>
+							</div>
+							<div class="col-9">
+								<h1>Get started with Kimberly</h1>
+								<h5 class="modal-title" id="contactModalLabel">Send Your Request to Kimberly</h5>
+							</div>
+	
+						</div>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div> <!-- ./modal-header -->
+					<div class="modal-body form-bottom">
+						<div>
+							<form id="inline-form-modal" accept-charset="ISO-8859-1" onsubmit="var originalCharset = document.charset; document.charset = 'ISO-8859-1'; window.onbeforeunload = function () {document.charset=originalCharset;};">
+								<input type="hidden" name="recipient" value="kimberly@kimberlycooper.me" />
+								<input type="hidden" name="subject" id="subj" value="KC Consulting:" />
+								<!-- <input type="hidden" name="redirect" value="http://www.kimberlycooper.me/contact/thankyou.html" /> 
+					  <input type="hidden" name="missing_fields_redirect" value="http://www.kimberlycooper.me/contact/error.html" /> -->
+								<input type="hidden" name="required" value="name,email,subject" />
+	
+								<div class="input-group mb-1">
+									<span class="input-group-addon tall " id="prepend-name"><i class="fa fa-user-circle-o fa-2" aria-hidden="true"></i></span>
+									<input type="text" class="form-control tall " name="name" placeholder="Your name" aria-describedby="prepend-name"
+									 required>
+								</div>
+	
+								<div class="input-group mb-1">
+									<span class="input-group-addon tall" id="prepend-email"><i class="fa fa-envelope fa-2" aria-hidden="true"></i></span>
+									<input type="email" class="form-control tall" name="email" placeholder="Your email address" aria-describedby="prepend-email"
+									 required>
+								</div>
+	
+								<div class="input-group mb-1">
+									<span class="input-group-addon tall" id="prepend-phone"><i class="fa fa-phone fa-2" aria-hidden="true"></i></span>
+									<input type="text" class="form-control tall" name="phone" placeholder="Your phone number" aria-describedby="prepend-phone">
+								</div>
+	
+								<div class="input-group mb-1">
+									<span class="input-group-addon" id="prepend-message"><i class="fa fa-commenting fa-2" aria-hidden="true"></i></span>
+									<textarea class="form-control " name="message" id="msg" rows="3" placeholder="How can I help you?" name="message"
+									 aria-describedby="prepend-message"></textarea>
+								</div>
+	
+								<button class="btn btn-outline-danger btn-lg btn-block email-form-button">Submit</button>
+	
+							</form>
+	
+						</div>
+	
+						<div class="d-none" id="success-modal">
+							<div class="alert alert-success" role="alert">
+								<p>Thank you, you will receive a response soon!</p>
+							</div> <!-- ./alert -->
+						</div> <!-- ./ success-modal -->
+	
+						<div class="d-none" id="error-modal">
+							<div class="alert alert-danger" role="alert">
+								<p class="my-1">I'm sorry, an error has occurred. &nbsp;Please contact Kimberly directly at:
+									kimberly@kimberlycooper.me</p>
+								<p class="m-0" id="err-moda-txt"></p>
+							</div> <!-- ./alert -->
+						</div> <!-- ./ error-modal -->
+	
+					</div> <!-- ./modal-body -->
+	
+				</div> <!-- ./modal-content -->
+			</div> <!-- ./modal-dialog -->
+	
+		</div> <!-- ./modal -->
 
 	<!--======================================= JAVASCRIPT =======================================-->
 	<!-- Bootstrap Complete Javascript -->
@@ -191,6 +275,49 @@
 	<script type="text/javascript" src="https://zg121.infusionsoft.com/app/timezone/timezoneInputJs?xid=b3987557376c5ce61a4c27cb597aedd4"></script>
 
 	<script type="text/javascript" src="assets/javascript/app.js?n=015"></script>
+
+	<script>
+	/* FORM SUBMISSION
+			=======================================================*/
+
+			$('#inline-form-modal').submit(function (e) {
+				e.preventDefault();
+				var objID = e.target.id
+				var subval = objID.substr(12)
+
+				$.ajax({
+					url: 'https://kimberlycooper.me/cgi-bin/FormMail.pl',
+					type: 'post',
+					data: $('#' + objID).serialize(),
+					complete: function () {
+						//whatever you wanna do after the form is successfully submitted
+						$('#' + objID).parent().addClass('d-none')
+						$('#success-' + subval).removeClass('d-none')
+					},
+					// error: function (err) {
+                    //     console.log('loading Ajax failure' + JSON.stringify(err));
+                        
+					// 	$('#' + objID).parent().addClass('d-none')
+					// 	$('#error-' + subval).removeClass('d-none')
+					// 	$('#err-' + subval.substr(0, 4) + '-txt').text('ERR ID:: loading Ajax failure')
+					// },
+					// onFailure: function (err) {
+					// 	console.log('Ajax Failure' + JSON.stringify(err));
+					// 	$('#' + objID).parent().addClass('d-none')
+					// 	$('#error-' + subval).removeClass('d-none')
+					// 	$('#err-' + subval.substr(0, 4) + '-txt').text('ERR ID:: Ajax failure')
+					// },
+					statusCode: {
+						404: function (err) {
+							console.log("missing info" + JSON.stringify(err));
+							$('#' + objID).parent().addClass('d-none')
+							$('#error-' + subval).removeClass('d-none')
+							$('#err-' + subval.substr(0, 4) + '-txt').text('ERR ID:: 404 missing info')
+						}
+					}
+				});
+			});
+	</script>
 
 	
 
