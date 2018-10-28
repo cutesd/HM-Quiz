@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+
     const myQuestions = [
         {
             question: "I live in total abundance, where I literally \nlack for nothing.",
@@ -230,17 +231,19 @@ $(document).ready(function () {
 
 
     function showLeadGen() {
+    
         quizContainer.classList.add("d-none");
         document.getElementsByClassName('lead-gen')[0].classList.remove('d-none');
         //
         var queryStr = getResults();
+      
         const _arr = queryStr.split('-');
-
+        
         for (var i = 0; i < _arr.length; i++) {
             const score = parseResults(_arr[i]);
             const n = (i === 4 || i === 7) ? '0' : '';
             $(`input[name='inf_custom_${myResults[i].chain}']`).val(score);
-            $(`input[name='inf_custom_${myResults[i].chain}Text${n}'`).val(myResults[i].result[score]);
+            $(`input[name='inf_custom_${myResults[i].chain}Text${n}']`).val(myResults[i].result[score]);
         }
 
         $(`input[name='inf_custom_ResultPageURL'`).val('http://chainsquiz.com/quiz/results.html?n=' + queryStr);
