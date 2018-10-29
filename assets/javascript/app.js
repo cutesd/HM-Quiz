@@ -163,9 +163,9 @@ $(document).ready(function () {
 						</div>
 					  </div>
 
-						<div class="slider-desc d-flex justify-content-between">
-							<div class="slider-desc-text">${question.minValText}</div>
-							<div class="slider-desc-text">${question.maxValText}</div>
+						<div class="numbar-desc d-flex justify-content-between">
+							<div class="numbar-desc-text">${question.minValText}</div>
+							<div class="numbar-desc-text">${question.maxValText}</div>
                         </div>
                         
                         <div class="alert text-danger mb-3 p-0 d-none" id="alert${qN}" role="alert">
