@@ -50,14 +50,26 @@
                             <div class="col-11 text-center">
                                 <iframe src="https://player.vimeo.com/video/290404589" id="results-video" frameborder="0"
                                     webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                <div class="text-right" style="margin-top:-10px;">
+                                    <a class="font-sm underline" style="font-size: .85rem;" id="vid-trans-link"
+                                        data-toggle="collapse" href="#vid-transcript" role="button" aria-expanded="false"
+                                        aria-controls="vid-transcript">
+                                        Click here to read video transcript.
+                                    </a>
+                                </div>
                             </div>
 
-                            <div class="col-10 col-lg-7 text-center">
+                            <div class="col-10 col-lg-7">
+                                <div class="text-right">
 
-                                <a class="font-sm underline" id="vid-trans-link" data-toggle="collapse" href="#vid-transcript" role="button"
-                                    aria-expanded="false" aria-controls="vid-transcript">
-                                    Click here to read video transcript.
-                                </a>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="https://meetme.so/HMCDiscoverySession" target="_blank">
+                                        <button class="btn btn-info btn-lg">
+                                            Click here to connect with Helen
+                                        </button>
+                                    </a>
+                                </div>
 
                                 <!-- =========  VIDEO TRANSCRIPT ============== -->
                                 <div class="collapse" id="vid-transcript">
@@ -127,9 +139,10 @@
                                             free yourself of one chain, it immediately starts to loosen or break the
                                             others. Breaking these chains is vital if you are going to own your full
                                             power. </p>
-                                            <p class="text-center">
-                                                <a class="underline" id="close-trans" href="#vid-transcript">Close Transcript</a>
-                                            </p>
+                                        <p class="text-center">
+                                            <a class="underline" id="close-trans" href="#vid-transcript">Close
+                                                Transcript</a>
+                                        </p>
                                     </div>
                                 </div>
                                 <!-- TRANSCRIPT END -->
@@ -138,7 +151,7 @@
 
                         <div class="row justify-content-center w-100 mt-4">
                             <div class="col-11 text-center">
-                                <h3 class="text-muted m-0">Your Results</h3>
+                                <h4 class="text-muted m-0">How Bound Are You?</h4>
                             </div>
                             <div class="col-11 col-md-8 col-lg-6" id="graph">
                                 <canvas id="myCanvas"></canvas>
@@ -150,6 +163,7 @@
                                 <p class="font-sm"><strong>Directions for Accessing Your Quiz Results:</strong><br>
                                     Click each of the chains links below to learn more about your
                                     individual results.</p>
+                                    <h4 class="text-secondary text-center mr-5">How Free are You?</h4>
                                 <!-- You can also click the button below to download a free report of your results, which we can
                                             discuss together as we customize your individual program. -->
                             </div>
@@ -165,7 +179,7 @@
 
 
 
-                        <div class="row justify-content-center w-100 pb-5">
+                        <div class="row justify-content-center w-100">
                             <div class="col-sm-10">
 
                                 <!-- CARD #1-->
@@ -174,8 +188,11 @@
                                         <div class="close-btn">
                                             <i class="far fa-window-close"></i>
                                         </div>
+                                       
+
+
                                         <div class="card-body">
-                                            <h5 class="card-title">Scarcity</h5>
+                                            <h5 class="card-title">Abundance</h5>
                                             <h6 class="card-subtitle mb-2 text-muted">Your Score: LOW</h6>
                                             <p class="card-text" id="low">
                                                 You literally feel like you’re on the brink of starvation: desperate
@@ -215,8 +232,9 @@
                                             <i class="far fa-window-close"></i>
 
                                         </div>
+
                                         <div class="card-body">
-                                            <h5 class="card-title">Mistrust</h5>
+                                            <h5 class="card-title">Trust</h5>
                                             <h6 class="card-subtitle mb-2 text-muted">Your Score: LOW</h6>
                                             <p class="card-text" id="low">
                                                 With a score at this level, you have a very hard time trusting other
@@ -254,7 +272,7 @@
 
                                         </div>
                                         <div class="card-body">
-                                            <h5 class="card-title">Invisibility</h5>
+                                            <h5 class="card-title">Visibility</h5>
                                             <h6 class="card-subtitle mb-2 text-muted">Your Score: LOW</h6>
                                             <p class="card-text" id="low">
                                                 You are in hiding - and we miss you! You might be moving from day to
@@ -291,7 +309,7 @@
                                             <i class="far fa-window-close"></i>
                                         </div>
                                         <div class="card-body">
-                                            <h5 class="card-title">Control</h5>
+                                            <h5 class="card-title">Flow</h5>
                                             <h6 class="card-subtitle mb-2 text-muted">Your Score: LOW</h6>
                                             <p class="card-text" id="low">
                                                 You are painfully aware of how much you need to control everything in
@@ -328,7 +346,7 @@
                                             <i class="far fa-window-close"></i>
                                         </div>
                                         <div class="card-body">
-                                            <h5 class="card-title">Repression</h5>
+                                            <h5 class="card-title">Expression</h5>
                                             <h6 class="card-subtitle mb-2 text-muted">Your Score: LOW</h6>
                                             <p class="card-text" id="low">
                                                 Do you feel silenced? I bet you do. You may even feel a physical
@@ -364,8 +382,9 @@
                                         <div class="close-btn">
                                             <i class="far fa-window-close"></i>
                                         </div>
+                                        
                                         <div class="card-body">
-                                            <h5 class="card-title">Ambiguity</h5>
+                                            <h5 class="card-title">Clarity</h5>
                                             <h6 class="card-subtitle mb-2 text-muted">Your Score: LOW</h6>
                                             <p class="card-text" id="low">
                                                 You feel like you’re in a fog. You are baffled at how and why people do
@@ -400,7 +419,7 @@
                                             <i class="far fa-window-close"></i>
                                         </div>
                                         <div class="card-body">
-                                            <h5 class="card-title">Disconnection</h5>
+                                            <h5 class="card-title">Connection</h5>
                                             <h6 class="card-subtitle mb-2 text-muted">Your Score: LOW</h6>
                                             <p class="card-text" id="low">
                                                 For you, this is not a friendly world. It’s dangerous, full of uncaring
@@ -433,10 +452,10 @@
                                         <div class="close-btn">
 
                                             <i class="far fa-window-close"></i>
-
+                                           
                                         </div>
                                         <div class="card-body">
-                                            <h5 class="card-title">Insignificance</h5>
+                                            <h5 class="card-title">Worth/Value</h5>
                                             <h6 class="card-subtitle mb-2 text-muted">Your Score: LOW</h6>
                                             <p class="card-text" id="low">
                                                 You feel like a lowly person, perhaps a servant to life, and unworthy
@@ -463,16 +482,23 @@
 
                             </div>
                         </div>
-                        <!-- <p class="text-center">
-                                <a href="http://helenmacmillan.com" target="_blank" class="btn btn-info">Learn more
-                                    about working with Helen</a>
-                            </p> -->
+                        <div class="text-center mt-3 pb-5">
+                            <a href="https://meetme.so/HMCDiscoverySession" target="_blank">
+                                <button class="btn btn-info btn-lg">
+                                    P.S. Want to know more? Connect with Helen
+                                </button>
+                            </a>
+                        </div>
+        
                     </div>
                     <!--./top -->
+
+                   
 
                 </div>
                 <!--./results -->
 
+               
             </div>
             <!-- ./results-container -->
 
@@ -483,12 +509,12 @@
         <!-- Bootstrap Complete Javascript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
-        
+
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
         <!-- ./bootstrap core -->
 
-        <script src="assets/javascript/results.js?v=001"></script>
+        <script src="assets/javascript/results.js?v=002"></script>
 
     </body>
 

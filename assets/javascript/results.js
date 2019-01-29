@@ -32,16 +32,15 @@ $(document).ready(function () {
 
 
         var myResults = {
-            "Disconnection": parseInt(_arr[6]),
-            "Ambiguity": parseInt(_arr[5]),
-            "Repression": parseInt(_arr[4]),
-            "Insignificance": parseInt(_arr[7]),
-            "Control": parseInt(_arr[3]),
-            "Invisibility": parseInt(_arr[2]),
-            "Mistrust": parseInt(_arr[1]),
-            "Scarcity": parseInt(_arr[0])
+            "Connection": parseInt(_arr[6]),
+            "Clarity": parseInt(_arr[5]),
+            "Expression": parseInt(_arr[4]),
+            "Worth/Value": parseInt(_arr[7]),
+            "Flow": parseInt(_arr[3]),
+            "Visibility": parseInt(_arr[2]),
+            "Trust": parseInt(_arr[1]),
+            "Abundance": parseInt(_arr[0])
         };
-
 
         var myBarchart = new Barchart(
             {
