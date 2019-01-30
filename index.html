@@ -17,9 +17,9 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
 	 crossorigin="anonymous">
 	<!-- Additional CSS -->
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css?v=001">
-	<!-- <link rel="stylesheet" type="text/css" href="assets/css/slider.css"> -->
-	<link rel="stylesheet" type="text/css" href="assets/css/HM.css?v=002">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css?v=008">
+	<link rel="stylesheet" type="text/css" href="assets/css/slider.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/HM.css?v=006">
 
 
 </head>
@@ -31,181 +31,143 @@
 		<div class="quiz-container" id='quiz-container'>
 
 
-			<!--======================================= PANEL =======================================-->
+			<!--======================================= SLIDE =======================================-->
+			<!-- <div class="slide">
 
-			<div class="card vertical-align text-center">
-				<div class="card-header">
-					<div class="inline-logo">
-						<img src="assets/images/HMC_logo-inline.png" class="img-fluid" alt="Helen MacMillan">
-					</div>
-					<!-- ./inline-logo -->
-					<div>Which of the 8 Invisible Chains have you Stuck?</div>
-				</div>
-				<!-- ./card-header -->
-				<div class="card-body">
-					<h5 class="question-num">Question #1</h5>
-					<h3 class="card-title question">I live in total abundance, where I literally lack for nothing.</h3>
-					<p class="description">Choose the number that best indicates where you feel in relation to this question.</p>
+				<header class="header">
+					<div class="inline-bg"><img src="assets/images/HMC_logo-inline.png" alt="Helen MacMillan"></div>
+					<h1>Which of the 8 Invisible Chains have you Stuck?</h1>
+				</header>
 
-					<div class="btn-toolbar mt-4 mb-3" id="btnBar" role="toolbar" aria-label="number toolbar">
-						<div class="btn-group btn-group-lg" role="group" aria-label="number range">
-							<button type="button" class="btn btn-info" data-val="1">1</button>
-							<button type="button" class="btn btn-info" data-val="2">2</button>
-							<button type="button" class="btn btn-info" data-val="3">3</button>
-							<button type="button" class="btn btn-info" data-val="4">4</button>
-							<button type="button" class="btn btn-info" data-val="5">5</button>
-							<button type="button" class="btn btn-info" data-val="6">6</button>
-							<button type="button" class="btn btn-info" data-val="7">7</button>
-							<button type="button" class="btn btn-info" data-val="8">8</button>
-							<button type="button" class="btn btn-info" data-val="9">9</button>
-							<button type="button" class="btn btn-info" data-val="10">10</button>
+				<div class="top">
+
+					<h3 class="question">This is the question text and it is very long very very long indeed.</h3>
+					<p class="description">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+
+					<div class="btn-toolbar mt-5 mb-3" role="toolbar" aria-label="Toolbar with button groups">
+						<div class="btn-group btn-group-lg mr-2" role="group" aria-label="First group">
+						  <button type="button" class="btn btn-outline-info">1</button>
+						  <button type="button" class="btn btn-outline-info">2</button>
+						  <button type="button" class="btn btn-outline-info">3</button>
+						  <button type="button" class="btn btn-outline-info">4</button>
+						  <button type="button" class="btn btn-outline-info">5</button>
+						  <button type="button" class="btn btn-outline-info">6</button>
+						  <button type="button" class="btn btn-outline-info">7</button>
+						  <button type="button" class="btn btn-outline-info">8</button>
+						  <button type="button" class="btn btn-outline-info">9</button>
+						  <button type="button" class="btn btn-outline-info">10</button>
 						</div>
-					</div>
-					<!-- ./number bar -->
+					  </div>
 
-					<div class="numbar-desc d-flex justify-content-between">
-						<div class="numbar-desc-text">wouldn't I love to ...</div>
-						<div class="numbar-desc-text">That is my reality ... AND I'm always wanting more</div>
-					</div>
-
-					<div class="alert text-danger mb-3 p-0 d-none" id="alert${qN}" role="alert">
-						* Please choose a number from above.
+					<div class="slider-desc d-flex">
+						<div class="p-2 mr-auto">not at all true</div>
+						<div class="p-2">absolutely true</div>
 					</div>
 
 				</div>
-				<!-- ./card-body -->
 
-				<div class="card-footer text-muted">
-					<div class="btn-group btn-group-lg nav-btns" role="group" aria-label="Basic example">
-						<!-- PREVIOUS BUTTON -->
-						<button type="button" class="btn" id="prev-btn">
-							<i class="fas fa-arrow-left fa-lg"></i>&nbsp;&nbsp;Previous
-						</button>
-						<!-- SUBMIT BUTTON -->
-						<button type="button" class="btn d-none" id="submit-btn">
-							Submit
-						</button>
-						<!-- NEXT BUTTON -->
-						<button type="button" class="btn" id="next-btn">
-							Next&nbsp;&nbsp;<i class="fas fa-arrow-right fa-lg"></i>
-						</button>
-					</div>
+				<div class="mt-auto bottom btn-group btn-group-lg" role="group" aria-label="Basic example">
+					<button type="button" class="btn" id="btn-div-right">
+						<i class="fas fa-arrow-left fa-lg"></i>&nbsp;&nbsp;Previous</button>
+					<button type="button" class="btn d-none">Submit</button>
+					<button type="button" class="btn" id="btn-div-left">Next&nbsp;&nbsp;
+						<i class="fas fa-arrow-right fa-lg"></i>
+					</button>
 				</div>
-				<!-- ./card-footer -->
-			</div>
-			<!-- ./card -->
+
+
+
+			</div> -->
 
 		</div>
 		<!-- ./quiz-container -->
 
-
-		<!--======================================= LEADGEN	 =======================================-->
-
 		<div class="lead-gen d-none">
 
-			<div class="card vertical-align">
-				<div class="card-header text-center">
-					<div class="inline-logo">
-						<img src="assets/images/HMC_logo-inline.png" class="img-fluid" alt="Helen MacMillan">
-					</div>
-					<!-- ./inline-logo -->
-					<div>Which of the 8 Invisible Chains have you Stuck?</div>
+			<header class="header">
+				<div class="inline-bg">
+					<img src="assets/images/HMC_logo-inline.png" alt="Helen MacMillan">
 				</div>
-				<!-- ./card-header -->
-				<div class="card-body">
+				<h1>Which of the 8 Invisible Chains have you Stuck?</h1>
+			</header>
 
-					<h3 class="question text-center">Where should we send your results?</h3>
+			<div class="top">
 
-					<form accept-charset="UTF-8" action="https://zg121.infusionsoft.com/app/form/process/b3987557376c5ce61a4c27cb597aedd4"
-					 class="infusion-form needs-validation" id="inf_form_b3987557376c5ce61a4c27cb597aedd4" method="POST" novalidate>
-						<input name="inf_form_xid" type="hidden" value="b3987557376c5ce61a4c27cb597aedd4" />
-						<input name="inf_form_name" type="hidden" value="Quiz LeadGen" />
-						<input name="infusionsoft_version" type="hidden" value="1.70.0.58116" />
+				<h3 class="question">Where should we send your results?</h3>
 
-						<input name="inf_custom_Scarcity" type="hidden" value="not found" />
-						<input name="inf_custom_ScarcityText" type="hidden" value="not found" />
-						<input name="inf_custom_MisTrust" type="hidden" value="not found" />
-						<input name="inf_custom_MisTrustText" type="hidden" value="not found" />
-						<input name="inf_custom_Invisibility" type="hidden" value="not found" />
-						<input name="inf_custom_InvisibilityText" type="hidden" value="not found" />
-						<input name="inf_custom_Control" type="hidden" value="not found" />
-						<input name="inf_custom_ControlText" type="hidden" value="not found" />
-						<input name="inf_custom_Repression" type="hidden" value="not found" />
-						<input name="inf_custom_RepressionText0" type="hidden" value="not found" />
-						<input name="inf_custom_Blindness" type="hidden" value="not found" />
-						<input name="inf_custom_BlindnessText" type="hidden" value="not found" />
-						<input name="inf_custom_Disconnection" type="hidden" value="not found" />
-						<input name="inf_custom_DisconnectionText" type="hidden" value="not found" />
-						<input name="inf_custom_UnderValue" type="hidden" value="not found" />
-						<input name="inf_custom_UnderValueText0" type="hidden" value="not found" />
-						<input name="inf_custom_ResultPageURL" type="hidden" value="not found" />
+				<form accept-charset="UTF-8" action="https://zg121.infusionsoft.com/app/form/process/b3987557376c5ce61a4c27cb597aedd4"
+				 class="infusion-form needs-validation" id="inf_form_b3987557376c5ce61a4c27cb597aedd4" method="POST" novalidate>
+					<input name="inf_form_xid" type="hidden" value="b3987557376c5ce61a4c27cb597aedd4" />
+					<input name="inf_form_name" type="hidden" value="Quiz LeadGen" />
+					<input name="infusionsoft_version" type="hidden" value="1.70.0.58116" />
 
-						<div class="form-row">
-							<div class="form-group col-md-6">
-								<label for="inf_field_FirstName">First Name</label>
-								<input class="form-control" id="inf_field_FirstName" name="inf_field_FirstName" placeholder="First" type="text"
-								 required />
-								<div class="invalid-feedback">
-									Please enter your first name.
-								</div>
-							</div>
-							<div class="form-group col-md-6">
-								<label for="inf_field_LastName">Last Name</label>
-								<input class="form-control" id="inf_field_LastName" name="inf_field_LastName" placeholder="Last" type="text"
-								 required />
-								<div class="invalid-feedback">
-									Please enter your last name.
-								</div>
+					<input name="inf_custom_Scarcity" type="hidden" value="not found" />
+					<input name="inf_custom_ScarcityText" type="hidden" value="not found" />
+					<input name="inf_custom_MisTrust" type="hidden" value="not found" />
+					<input name="inf_custom_MisTrustText" type="hidden" value="not found" />
+					<input name="inf_custom_Invisibility" type="hidden" value="not found" />
+					<input name="inf_custom_InvisibilityText" type="hidden" value="not found" />
+					<input name="inf_custom_Control" type="hidden" value="not found" />
+					<input name="inf_custom_ControlText" type="hidden" value="not found" />
+					<input name="inf_custom_Repression" type="hidden" value="not found" />
+					<input name="inf_custom_RepressionText0" type="hidden" value="not found" />
+					<input name="inf_custom_Blindness" type="hidden" value="not found" />
+					<input name="inf_custom_BlindnessText" type="hidden" value="not found" />
+					<input name="inf_custom_Disconnection" type="hidden" value="not found" />
+					<input name="inf_custom_DisconnectionText" type="hidden" value="not found" />
+					<input name="inf_custom_UnderValue" type="hidden" value="not found" />
+					<input name="inf_custom_UnderValueText0" type="hidden" value="not found" />
+					<input name="inf_custom_ResultPageURL" type="hidden" value="not found" />
+
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="inf_field_FirstName">First Name</label>
+							<input class="form-control" id="inf_field_FirstName" name="inf_field_FirstName" placeholder="" type="text"
+							 required />
+							<div class="invalid-feedback">
+								Please enter your first name.
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="inf_field_Email">Email</label>
-							<input class="form-control" id="inf_field_Email" name="inf_field_Email" placeholder="example@email.com" type="text"
+						<div class="form-group col-md-6">
+							<label for="inf_field_LastName">Last Name</label>
+							<input class="form-control" id="inf_field_LastName" name="inf_field_LastName" placeholder="" type="text"
+							 required />
+							<div class="invalid-feedback">
+								Please enter your last name.
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inf_field_Email">Email</label>
+						<input class="form-control" id="inf_field_Email" name="inf_field_Email" placeholder="example@email.com" type="text"
 							 required />
 							<div class="invalid-feedback" id="email-feedback">
 								Please enter a valid email.
 							</div>
 							<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-						</div>
-
-						<div class="form-group" id="check-group">
-							<div class="form-check">
-								<span class="infusion-option">
-									<input class="form-check-input" id="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan" name="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan"
-									 type="checkbox" checked="checked" value="1751" checked required />
-									<label class="form-check-label" for="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan">
-										&nbsp;I know I am free to unsubscribe at anytime.
-									</label>
-									<div class="invalid-feedback">Example invalid feedback text</div>
-
-								</span>
-							</div>
-						</div>
-						<button type="submit" class="d-none">Submit</button>
-
-					</form>
-				</div>
-				<!-- ./card-body -->
-
-				<div class="card-footer text-muted">
-					<div class="btn-group btn-group-lg nav-btns" role="group" aria-label="Basic example">
-						<!-- PREVIOUS BUTTON -->
-						<button type="button" class="btn" id="prev-btn">
-							<i class="fas fa-arrow-left fa-lg"></i>&nbsp;&nbsp;Previous
-						</button>
-						<!-- SUBMIT BUTTON -->
-						<button type="button" class="btn d-none" id="submit-btn">
-							Submit
-						</button>
-						<!-- NEXT BUTTON -->
-						<button type="button" class="btn" id="next-btn">
-							Next&nbsp;&nbsp;<i class="fas fa-arrow-right fa-lg"></i>
-						</button>
 					</div>
-				</div>
-				<!-- ./card-footer -->
+					
+					<div class="form-group">
+						<div class="form-check">
+							<span class="infusion-option">
+								<input class="form-check-input" id="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan" name="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan"
+								 type="checkbox" checked="checked" value="1751" checked required />
+								<label class="form-check-label" for="inf_option_IagreetoreceiveperiodicemailsfromHelenMacMillan">&nbsp;I know I am free to unsubscribe
+									at anytime.</label>
+								<div class="invalid-feedback">Example invalid feedback text</div>
+								
+							</span>
+						</div>
+					</div>
+					<button type="submit" class="d-none">Submit</button>
+
+				</form>
 			</div>
-			<!-- ./card -->
+
+			<div class="mt-auto bottom btn-group btn-group-lg" role="group" aria-label="Basic example">
+				<button type="button" class="btn" id="lead-back-btn"><i class="fas fa-arrow-left fa-lg"></i>&nbsp;&nbsp;Previous</button></button>
+				<button type="button" id="submit-lead" class="btn">Submit</button>
+			</div>
 
 
 		</div>
@@ -227,9 +189,9 @@
 	<script type="text/javascript" src="https://zg121.infusionsoft.com/app/webTracking/getTrackingCode"></script>
 	<script type="text/javascript" src="https://zg121.infusionsoft.com/app/timezone/timezoneInputJs?xid=b3987557376c5ce61a4c27cb597aedd4"></script>
 
-	<!-- <script type="text/javascript" src="assets/javascript/app.js?n=015"></script> -->
+	<script type="text/javascript" src="assets/javascript/app.js?n=015"></script>
 
-
+	
 
 </body>
 

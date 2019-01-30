@@ -109,7 +109,7 @@ li {
 }
 
 .inline-logo {
-  display: none;
+  display: block;
 }
 
 .slide, .results {
